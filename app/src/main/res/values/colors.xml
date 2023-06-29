@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_black">#151515</color>
+    <color name="midnight_express">#232942</color>
+    <color name="governor_bay">#5d5c8b</color>
+    <color name="wistful">#a69be1</color>
+    <color name="snuff">#f1cfed</color>
+    <color name="black">#FF000000</color>
+    <color name="red">#F44336</color>
+    <color name="yellow">#FFC107</color>
+    <color name="grayInput">#B6B4B3</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blueMozzafiato">#598392</color>
+</resources>

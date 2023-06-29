@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="android:selectableItemBackground">@android:color/transparent</item>
+    </style>
+</resources>
+
