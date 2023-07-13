@@ -22,13 +22,18 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="224dp"
-        android:layout_height="48dp"
+        android:layout_width="270dp"
+        android:layout_height="53dp"
         android:background="@color/blueMozzafiato"
         android:fontFamily="@font/forumregular"
         android:text="Login"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="15sp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -44,7 +49,7 @@
         android:fontFamily="@font/forumregular"
         android:text="LOGIN"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,14 +64,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
         android:fontFamily="@font/forumregular"
+        android:textColorHint="#000000"
         app:boxBackgroundColor="#B6B4B3"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="#00FFFFFF"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:hintTextColor="#FFFFFF"
+        app:boxStrokeColor="#00FFFFFF"
+        app:hintTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/backgroud_login1"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +85,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/forumregular"
             android:hint="Username"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/black"
+            android:textColorHint="#000000" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -88,15 +95,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="-20dp"
         android:fontFamily="@font/forumregular"
-        app:boxBackgroundColor="#B6B4B3"
+        android:textColorHint="#000000"
+        app:boxBackgroundColor="@color/grayInput"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/grayInput"
-        app:endIconMode="password_toggle"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:hintTextColor="#FFFFFF"
+        app:boxStrokeColor="@color/grayInput"
+        app:endIconMode="password_toggle"
+        app:hintTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/backgroud_login1"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +118,7 @@
             android:fontFamily="@font/forumregular"
             android:hint="Password"
             android:inputType="text|textPassword"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF" />
+            android:textColorHighlight="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView

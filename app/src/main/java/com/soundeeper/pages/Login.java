@@ -35,10 +35,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button login = findViewById(R.id.loginButton);
-        TextInputEditText user = findViewById(R.id.UserNameEdit);
-        TextInputEditText password = findViewById(R.id.UserPasswordEdit);
-        TextInputLayout userLayout = findViewById(R.id.UserNameLayout);
-        TextInputLayout passwordLayout = findViewById(R.id.UserPasswordLayout);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView linkTextView = findViewById(R.id.textView10);
 
         linkTextView.setOnClickListener(v -> {
@@ -47,30 +43,9 @@ public class Login extends AppCompatActivity {
         });
 
         login.setOnClickListener(v -> {
-            if (user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                userLayout.setError("Campo obrigatório");
-                passwordLayout.setError("Campo obrigatório");
-            }
-
-            if (user.getText().toString().isEmpty()) {
-                userLayout.setError("Campo obrigatório");
-            } else {
-                userLayout.setError(null);
-            }
-
-            if (password.getText().toString().isEmpty()) {
-                passwordLayout.setError("Campo obrigatório");
-            } else {
-                passwordLayout.setError(null);
-            }
-
-            if (!user.getText().toString().isEmpty() && !password.getText().toString().isEmpty()) {
-                userLayout.setError(null);
-                passwordLayout.setError(null);
                 Intent intent = new Intent(Login.this, NavigationPage.class);
                 startActivity(intent);
                 finish();
-            }
         });
 
 

@@ -12,6 +12,13 @@
         android:theme="@style/Theme.SounDeeper"
         tools:targetApi="31">
         <activity
+            android:name=".PageCar"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".NavigationPage"
             android:exported="false">
             <meta-data

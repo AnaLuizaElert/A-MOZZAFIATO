@@ -61,9 +61,10 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             android:fontFamily="@font/forumregular"
+            android:textColorHint="@color/black"
             app:boxBackgroundMode="filled"
             app:boxStrokeColor="@color/grayInput"
-            app:hintTextColor="#FFFFFF"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,9 +74,10 @@
                 android:id="@+id/NomeEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/grayInput"
                 android:fontFamily="@font/forumregular"
                 android:hint="Nome"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -90,9 +92,10 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             android:fontFamily="@font/forumregular"
+            android:textColorHint="@color/black"
             app:boxBackgroundMode="filled"
             app:boxStrokeColor="@color/grayInput"
-            app:hintTextColor="#FFFFFF"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -105,9 +108,8 @@
                 android:background="@color/grayInput"
                 android:fontFamily="@font/forumregular"
                 android:hint="Telefone"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -122,9 +124,10 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             android:fontFamily="@font/forumregular"
+            android:textColorHint="@color/black"
             app:boxBackgroundMode="filled"
             app:boxStrokeColor="@color/grayInput"
-            app:hintTextColor="#FFFFFF"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -138,7 +141,7 @@
                 android:fontFamily="@font/forumregular"
                 android:hint="Email"
                 android:inputType="datetime|date"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -153,11 +156,12 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             android:fontFamily="@font/forumregular"
-            app:boxStrokeColor="@color/grayInput"
+            android:textColorHint="@color/black"
             app:boxBackgroundMode="filled"
+            app:boxStrokeColor="@color/grayInput"
             app:endIconMode="password_toggle"
             app:helperTextEnabled="true"
-            app:hintTextColor="#FFFFFF"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -171,7 +175,7 @@
                 android:fontFamily="@font/forumregular"
                 android:hint="Password"
                 android:inputType="text|textPassword"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -186,10 +190,11 @@
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             android:fontFamily="@font/forumregular"
+            android:textColorHint="@color/black"
             app:boxBackgroundMode="filled"
             app:boxStrokeColor="#00FFFFFF"
             app:endIconMode="password_toggle"
-            app:hintTextColor="#FFFFFF"
+            app:hintTextColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -203,18 +208,8 @@
                 android:fontFamily="@font/forumregular"
                 android:hint="Confirm Password"
                 android:inputType="text|textPassword"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/VerifyPasswordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="672dp"
-            android:layout_marginEnd="110dp"
-            android:textSize="10sp" />
 
     </RelativeLayout>
 

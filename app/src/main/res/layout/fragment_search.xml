@@ -1,14 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_gradient"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.fragments.Search">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1000dp"
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Mozaffiato_pesquisar"
+                android:layout_width="136dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="259dp"
+                android:fontFamily="@font/forumregular"
+                android:text="@string/app_name"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="350dp"
+                android:layout_height="38dp"
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+
+                android:background="@color/white"
+                android:iconifiedByDefault="false"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:text="Pesquise" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal"
+                    android:textAlignment="center">
+
+                    <ImageView
+                        android:id="@+id/lineCategoryLeft"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/line"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/Categoria"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/forumregular"
+                        android:text="CATEGORIAS"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30dp" />
+
+                    <ImageView
+                        android:id="@+id/lineCategoryRight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/line"
+                        android:layout_gravity="center" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="50dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeConversivel"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+                    android:layout_marginStart="25dp"
+
+                    android:layout_marginRight="25dp"
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+
+                    app:boxStrokeColor="@color/grayInput"
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeConversivelText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/conversivel"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeCoupe"
+                    android:layout_marginLeft="40dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeCoupeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/coupe"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeHot"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginRight="25dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeHotText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/hot"
+                        android:contextClickable="false"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomePicape"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="40dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomePicapeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/picape"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeAmericano"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginRight="25dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeAmericanoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/americano"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeNacional"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="40dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeNacionalText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/nacional"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NomeEuropeu"
+                    android:layout_marginStart="25dp"
+
+                    android:fontFamily="@font/forumregular"
+                    android:textColorHint="@color/black"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeColor="@color/grayInput"
+                    android:layout_width="160dp"
+                    android:layout_height="118dp"
+
+                    app:hintTextColor="@color/black"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/NomeEuropeuText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/europeu"
+                        android:fontFamily="@font/forumregular"
+                        android:hint="@string/app_name"
+                        android:textColor="@color/black"
+                        android:gravity="bottom|center_horizontal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
