@@ -7,9 +7,9 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher_foreground"
-        android:label="SounDeeper"
+        android:label="A MOZZAFIATO"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SounDeeper"
+        android:theme="@style/Theme.Amozzafiato"
         tools:targetApi="31">
         <activity
             android:name=".PageCar"
@@ -26,12 +26,12 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".splash"
+            android:name=".Splash"
             android:exported="true"
             android:label="@string/title_activity_splash"
-            android:theme="@style/Theme.SounDeeper" />
+            android:theme="@style/Theme.Amozzafiato" />
         <activity
-            android:name=".pages.Cadastro"
+            android:name=".pages.Register"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

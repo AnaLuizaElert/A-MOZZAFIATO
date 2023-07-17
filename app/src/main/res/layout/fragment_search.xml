@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="wrap_content"
         >
 
         <LinearLayout
@@ -19,36 +19,34 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/Mozaffiato_pesquisar"
-                android:layout_width="136dp"
-                android:layout_height="24dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="259dp"
-                android:fontFamily="@font/forumregular"
+                android:id="@+id/registerAppName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/app_name"
-                android:textColor="#FFFFFF"
-                android:textSize="20dp" />
+                android:fontFamily="@font/forumregular"
+
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
                 android:layout_width="350dp"
                 android:layout_height="38dp"
 
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginTop="30dp"
 
-                android:background="@color/white"
+                android:background="@drawable/rounded_border"
+                android:backgroundTint="@color/white"
                 android:iconifiedByDefault="false"
                 android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:text="Pesquise" />
+                android:inputType="text" />
 
-
-                <LinearLayout
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:orientation="horizontal"
@@ -60,18 +58,20 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:src="@drawable/line"
-                        android:layout_gravity="center" />
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/title_category"  />
 
                     <TextView
-                        android:id="@+id/Categoria"
+                        android:id="@+id/CategorTitle"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:textAlignment="center"
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/forumregular"
-                        android:text="CATEGORIAS"
+                        android:text="@string/title_category"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
                         android:textColor="#FFFFFF"
-                        android:textSize="30dp" />
+                        android:textSize="30sp" />
 
                     <ImageView
                         android:id="@+id/lineCategoryRight"
@@ -79,240 +79,152 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:src="@drawable/line"
-                        android:layout_gravity="center" />
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/title_category"  />
 
                 </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="50dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeConversivel"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
-                    android:layout_marginStart="25dp"
-
-                    android:layout_marginRight="25dp"
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-
-                    app:boxStrokeColor="@color/grayInput"
-                    app:hintTextColor="@color/black"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeConversivelText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/conversivel"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textColor="@color/black" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeCoupe"
-                    android:layout_marginLeft="40dp"
-
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
-
-                    app:hintTextColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeCoupeText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/coupe"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        />
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_marginTop="25dp"
                 android:orientation="horizontal">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeHot"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="120dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginRight="25dp"
+                    app:cardElevation="10dp"
+                    style="@style/StyleCardCategories">
 
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
-
-                    app:hintTextColor="@color/black"
-
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeHotText"
+                    <ImageButton
+                        android:id="@+id/searchConvertibleCategory"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/hot"
-                        android:contextClickable="false"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textColor="@color/black" />
+                        style="@style/StyleImageCardCategories"
+                        android:src="@drawable/convertible"
+                        android:contentDescription="@string/title_category"  />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomePicape"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="40dp"
-
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
+                <androidx.cardview.widget.CardView
                     android:layout_width="160dp"
-                    android:layout_height="118dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="45dp"
+                    style="@style/StyleCardCategories">
 
-                    app:hintTextColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomePicapeText"
+                    <ImageButton
+                        android:id="@+id/searchCoupeCategory"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/picape"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:includeFontPadding="false"
-                        android:textColor="@color/black" />
+                        style="@style/StyleImageCardCategories"
+                        android:src="@drawable/coupe"
+                        android:contentDescription="@string/title_category"  />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:orientation="horizontal">-->
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeAmericano"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginRight="25dp"
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="160dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    style="@style/StyleCardCategories">-->
 
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/searchPickupCategory"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/StyleImageCardCategories"-->
+<!--                        android:src="@drawable/pickup"-->
+<!--                        android:contentDescription="@string/title_category"  />-->
 
-                    app:hintTextColor="@color/black"
+<!--                </androidx.cardview.widget.CardView>-->
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="160dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    style="@style/StyleCardCategories">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeAmericanoText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/americano"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textColor="@color/black" />
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/searchHotCategory"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/StyleImageCardCategories"-->
+<!--                        android:src="@drawable/hot"-->
+<!--                        android:contentDescription="@string/title_category"  />-->
 
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                </androidx.cardview.widget.CardView>-->
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeNacional"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="40dp"
+<!--            </LinearLayout>-->
 
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:orientation="horizontal">-->
 
-                    app:hintTextColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="160dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    style="@style/StyleCardCategories">-->
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/searchNationalCategory"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/StyleImageCardCategories"-->
+<!--                        android:src="@drawable/national"-->
+<!--                        android:contentDescription="@string/title_category"  />-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeNacionalText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/nacional"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textColor="@color/black" />
+<!--                </androidx.cardview.widget.CardView>-->
 
-                </com.google.android.material.textfield.TextInputLayout>
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="160dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    style="@style/StyleCardCategories">-->
 
-            </LinearLayout>
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/searchAmericanCategory"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/StyleImageCardCategories"-->
+<!--                        android:src="@drawable/american"-->
+<!--                        android:contentDescription="@string/title_category" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="horizontal">
+<!--                </androidx.cardview.widget.CardView>-->
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/NomeEuropeu"
-                    android:layout_marginStart="25dp"
+<!--            </LinearLayout>-->
 
-                    android:fontFamily="@font/forumregular"
-                    android:textColorHint="@color/black"
-                    app:boxBackgroundMode="filled"
-                    app:boxStrokeColor="@color/grayInput"
-                    android:layout_width="160dp"
-                    android:layout_height="118dp"
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:orientation="horizontal">-->
 
-                    app:hintTextColor="@color/black"
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="160dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginStart="25dp"-->
+<!--                    style="@style/StyleCardCategories">-->
 
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints">
+<!--                    <ImageButton-->
+<!--                        android:id="@+id/searchEuropeanCategory"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        style="@style/StyleImageCardCategories"-->
+<!--                        android:src="@drawable/european"-->
+<!--                        android:contentDescription="@string/title_category" />-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/NomeEuropeuText"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/europeu"
-                        android:fontFamily="@font/forumregular"
-                        android:hint="@string/app_name"
-                        android:textColor="@color/black"
-                        android:gravity="bottom|center_horizontal" />
+<!--                </androidx.cardview.widget.CardView>-->
 
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 

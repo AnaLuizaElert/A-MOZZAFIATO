@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splash">
+    tools:context=".Splash">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/blueMozzafiato">
 
         <!-- Adicione aqui o conteúdo da sua tela de splash, como uma imagem, logotipo ou animação -->
         <ImageView

@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/menu_home"
-        android:name="com.soundeeper.pages.fragments.Home"
+        android:name="com.amozzafiato.pages.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/menu_search"
-        android:name="com.soundeeper.pages.fragments.Search"
+        android:name="com.amozzafiato.pages.fragments.Search"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/menu_profile"
-        android:name="com.soundeeper.pages.fragments.Profile"
+        android:name="com.amozzafiato.pages.fragments.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SounDeeper" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Amozzafiato" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/governor_bay</item>
         <item name="colorPrimaryVariant">@color/midnight_express</item>
