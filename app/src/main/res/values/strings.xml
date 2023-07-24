@@ -4,6 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="button_send">ENVIAR</string>
 
     <string name="title_register">Cadastrar</string>
     <string name="category_input_phone">Telefone</string>
@@ -19,5 +20,25 @@
 
     <string name="title_category">Categorias</string>
     <string name="placeholder_search">Pesquise</string>
+
+    <string name="profile_card_name">Natalia Locsak</string>
+    <string name="profile_card_state">Santa Catarina</string>
+    <string name="profile_card_data">Meus dados</string>
+    <string name="profile_card_favorite">Favoritos</string>
+    <string name="profile_card_negotiate">Negociar automóvel</string>
+    <string name="profile_card_contact">Entre em contato</string>
+
+    <string name="profile_contact_title">Contato</string>
+    <string name="profile_contact_street">Rua Auto, 2023, Jaraguá - SC</string>
+    <string name="profile_contact_email">a.mozzafiato@a&amp;a.com</string>
+    <string name="profile_contact_whatsapp">(47) 99999-9999</string>
+    <string name="profile_contact_description">Escreva sua mensagem</string>
+
+    <string name="profile_data_title">Meus dados</string>
+    <string name="profile_data_phone">(47) 99999-9999</string>
+    <string name="profile_data_email">natalia@gmail.com</string>
+    <string name="profile_data_password">********</string>
+
+
 
 </resources>
