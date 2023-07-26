@@ -156,25 +156,31 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="300dp"
-                            android:layout_height="35dp"
+                            android:layout_height="42dp"
                             android:layout_marginTop="5dp"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
                             <androidx.cardview.widget.CardView
                                 android:layout_width="298dp"
-                                android:layout_height="33dp"
+                                android:layout_height="40dp"
                                 app:cardBackgroundColor="@color/grayMozzafiato"
                                 app:cardCornerRadius="25dp"
                                 app:cardElevation="10dp"
                                 android:layout_gravity="center"
                                 app:cardPreventCornerOverlap="false">
-                                <TextView
+
+                                <EditText
                                     android:id="@+id/profile_data_input_name"
+                                    style="@style/StyleInputData"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    style="@style/StyleInputData"
-                                    android:text="@string/profile_card_name" />
+                                    android:ems="10"
+                                    android:enabled="true"
+                                    android:text="@string/profile_card_name"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
+
                             </androidx.cardview.widget.CardView>
                         </androidx.cardview.widget.CardView>
 
@@ -190,25 +196,31 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="300dp"
-                            android:layout_height="35dp"
+                            android:layout_height="42dp"
                             android:layout_marginTop="5dp"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
                             <androidx.cardview.widget.CardView
                                 android:layout_width="298dp"
-                                android:layout_height="33dp"
+                                android:layout_height="40dp"
                                 app:cardBackgroundColor="@color/grayMozzafiato"
                                 app:cardCornerRadius="25dp"
                                 app:cardElevation="10dp"
                                 android:layout_gravity="center"
                                 app:cardPreventCornerOverlap="false">
-                                <TextView
+
+                                <EditText
                                     android:id="@+id/profile_data_input_phone"
+                                    style="@style/StyleInputData"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    style="@style/StyleInputData"
-                                    android:text="@string/profile_data_phone" />
+                                    android:ems="10"
+                                    android:enabled="true"
+                                    android:text="@string/profile_data_phone"
+                                    android:textAlignment="gravity"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
                             </androidx.cardview.widget.CardView>
                         </androidx.cardview.widget.CardView>
 
@@ -224,25 +236,31 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="300dp"
-                            android:layout_height="35dp"
+                            android:layout_height="42dp"
                             android:layout_marginTop="5dp"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
                             <androidx.cardview.widget.CardView
                                 android:layout_width="298dp"
-                                android:layout_height="33dp"
+                                android:layout_height="40dp"
                                 app:cardBackgroundColor="@color/grayMozzafiato"
                                 app:cardCornerRadius="25dp"
                                 app:cardElevation="10dp"
                                 android:layout_gravity="center"
                                 app:cardPreventCornerOverlap="false">
-                                <TextView
+
+                                <EditText
                                     android:id="@+id/profile_data_input_email"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
                                     style="@style/StyleInputData"
-                                    android:text="@string/profile_data_email" />
+                                    android:layout_width="290dp"
+                                    android:layout_height="wrap_content"
+                                    android:ems="10"
+                                    android:enabled="true"
+                                    android:inputType="textEmailAddress"
+                                    android:text="@string/profile_data_email"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
                             </androidx.cardview.widget.CardView>
                         </androidx.cardview.widget.CardView>
 
@@ -258,25 +276,31 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="300dp"
-                            android:layout_height="35dp"
+                            android:layout_height="42dp"
                             android:layout_marginTop="5dp"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
                             <androidx.cardview.widget.CardView
                                 android:layout_width="298dp"
-                                android:layout_height="33dp"
+                                android:layout_height="40dp"
                                 app:cardBackgroundColor="@color/grayMozzafiato"
                                 app:cardCornerRadius="25dp"
                                 app:cardElevation="10dp"
                                 android:layout_gravity="center"
                                 app:cardPreventCornerOverlap="false">
-                                <TextView
+
+                                <EditText
                                     android:id="@+id/profile_data_input_password"
+                                    style="@style/StyleInputData"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    style="@style/StyleInputData"
-                                    android:text="@string/profile_data_password" />
+                                    android:ems="10"
+                                    android:enabled="true"
+                                    android:inputType="textPassword"
+                                    android:text="@string/profile_data_password"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
                             </androidx.cardview.widget.CardView>
                         </androidx.cardview.widget.CardView>
 
@@ -291,5 +315,13 @@
 
 
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
 </LinearLayout>
