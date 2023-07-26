@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_profile"
+    tools:context=".pages.ProfileContact">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1000dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/registerAppName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/forumregular"
+                android:text="@string/app_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center|start"
+                android:paddingStart="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/localization" />
+
+                <TextView
+                    android:id="@+id/profile_contact_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/forumregular"
+                    android:text="@string/profile_contact_street"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|start"
+                android:paddingStart="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/email" />
+
+                <TextView
+                    android:id="@+id/profile_contact_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/forumregular"
+                    android:text="@string/profile_contact_email"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|start"
+                android:paddingStart="60dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/whatsapp" />
+
+                <TextView
+                    android:id="@+id/profile_contact_whatsapp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/forumregular"
+                    android:text="@string/profile_contact_whatsapp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical"
+                android:textAlignment="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-20dp"
+                    android:backgroundTint="@color/grayMozzafiato"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp">
+
+                            <ImageView
+                                android:id="@+id/profile_contact_come_back_profile"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/arrow_left"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/forumregular"
+                                android:text="@string/profile_contact_title"
+                                android:textColor="@color/white"
+                                android:textAlignment="center"
+                                android:textSize="25sp"
+                                android:paddingEnd="50dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="40dp"
+                            android:paddingStart="50dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/forumregular"
+                                android:text="@string/profile_contact_description"
+                                android:textColor="@color/white"
+                                android:textAlignment="textStart"
+                                android:textSize="16sp"/>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="300dp"
+                                android:layout_height="180dp"
+                                android:layout_marginTop="5dp"
+                                android:backgroundTint="@color/white"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="10dp"
+                                app:cardPreventCornerOverlap="false"  >
+
+                                <EditText
+                                    android:id="@+id/editTextTextMultiLine"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/white"
+                                    android:textAlignment="textStart"
+                                    android:gravity="start"
+                                    android:fontFamily="@font/forumregular"
+                                    android:inputType="textMultiLine"
+                                    android:textColor="@color/black"
+                                    android:typeface="normal"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <Button
+                                style="@style/StyleButton"
+                                android:layout_width="300dp"
+                                android:layout_height="50dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/rounded_border"
+                                android:shadowColor="#000000"
+                                android:text="@string/button_send"
+                                android:textSize="20sp">
+
+                            </Button>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

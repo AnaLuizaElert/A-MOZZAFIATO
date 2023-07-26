@@ -36,14 +36,21 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="StyleCardCategories" parent="Widget.Material3.CardView.Filled">
-        <item name="cardCornerRadius">10dp</item>
-        <item name="cardBackgroundColor">@color/lightGray</item>
-    </style>
-
     <style name="StyleImageCardCategories" parent="Widget.AppCompat.ImageButton">
         <item name="android:scaleType">centerCrop</item>
-        <item name="backgroundTint">@color/lightGray</item>
+        <item name="android:background">@drawable/rounded_border_img</item> <!-- Referência ao arquivo rounded_border.xml -->
+        <item name="android:backgroundTint">@color/lightGray</item>
+    </style>
+
+    <style name="StyleInputData" parent="Widget.MaterialComponents.TextView">
+        <item name="android:backgroundTint">@color/grayMozzafiato</item>
+        <item name="android:fontFamily">@font/forumregular</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:typeface">normal</item>
     </style>
 
 </resources>
