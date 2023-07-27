@@ -12,13 +12,34 @@
         android:theme="@style/Theme.Amozzafiato"
         tools:targetApi="31">
         <activity
+            android:name=".Search"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".pages.InterestForm"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".pages.PageCarImages"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".pages.ProfileData"
             android:exported="false" />
         <activity
             android:name=".pages.ProfileContact"
             android:exported="false" />
         <activity
-            android:name=".PageCar"
+            android:name=".pages.PageCar"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
