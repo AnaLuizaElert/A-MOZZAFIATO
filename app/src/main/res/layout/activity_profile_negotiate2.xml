@@ -123,12 +123,119 @@
                         <Button
                             android:id="@+id/profile_negotiate_input_images"
                             android:layout_width="300dp"
-                            android:layout_height="42dp"
+                            android:layout_height="53dp"
                             android:backgroundTint="@color/white"
-                            android:text="Escolher Imagem"
+                            android:text="@string/profile_negotiate_images_hint"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/grayMozzafiato"
+                            android:textSize="11sp"
+                            app:cornerRadius="42dp"
+                            app:icon="@drawable/upload"
                             tools:ignore="TouchTargetSizeCheck" />
 
-                        <!-- Botão para escolher a imagem -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/forumregular"
+                            android:text="@string/profile_negotiate_exchange"
+                            android:textColor="@color/white"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"/>
+
+                        <RadioGroup
+                            android:id="@+id/profile_negotiate_container_radio_exchange"
+                            android:layout_width="300dp"
+                            android:layout_height="42dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/profile_negotiate_radio_automatic"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/white"
+                                android:text="@string/profile_negotiate_automatic"
+                                android:textColor="@color/white"  />
+
+                            <RadioButton
+                                android:id="@+id/profile_negotiate_radio_manual"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:buttonTint="@color/white"
+                                android:text="@string/profile_negotiate_manual"
+                                android:textColor="@color/white" />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/forumregular"
+                            android:text="@string/profile_negotiate_original"
+                            android:textColor="@color/white"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"/>
+
+                        <RadioGroup
+                            android:id="@+id/profile_negotiate_container_radio_original"
+                            android:layout_width="300dp"
+                            android:layout_height="42dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/profile_negotiate_radio_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/white"
+                                android:text="@string/yes"
+                                android:textColor="@color/white"  />
+
+                            <RadioButton
+                                android:id="@+id/profile_negotiate_radio_not"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:buttonTint="@color/white"
+                                android:text="@string/not"
+                                android:textColor="@color/white" />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/forumregular"
+                            android:text="@string/profile_negotiate_obs"
+                            android:textColor="@color/white"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="300dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="5dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="10dp"
+                            app:cardPreventCornerOverlap="false"  >
+
+                            <EditText
+                                android:id="@+id/editTextTextMultiLine"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:backgroundTint="@color/white"
+                                android:textAlignment="textStart"
+                                android:gravity="start"
+                                android:fontFamily="@font/forumregular"
+                                android:inputType="textMultiLine"
+                                android:textColor="@color/black"
+                                android:typeface="normal"
+                                />
+
+                        </androidx.cardview.widget.CardView>
 
                         <Button
                             android:id="@+id/profile_negotiate_button_next"
@@ -137,6 +244,8 @@
                             android:layout_gravity="start"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/rounded_border"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/forumregular"
                             android:text="@string/profile_negotiate_button_next"
                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

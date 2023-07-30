@@ -51,9 +51,10 @@
     <string name="profile_negotiate_color">Cor *</string>
     <string name="profile_negotiate_price">Preço(reais) *</string>
     <string name="profile_negotiate_images">Imagens do carro *</string>
+    <string name="profile_negotiate_images_hint">Fazer uplad</string>
     <string name="profile_negotiate_exchange">Câmbio *</string>
-    <string name="profile_negotiate_manual">automático</string>
-    <string name="profile_negotiate_automatic">manual</string>
+    <string name="profile_negotiate_manual">manual</string>
+    <string name="profile_negotiate_automatic">automático</string>
     <string name="profile_negotiate_original">Original? *</string>
     <string name="profile_negotiate_obs">Observação</string>
 

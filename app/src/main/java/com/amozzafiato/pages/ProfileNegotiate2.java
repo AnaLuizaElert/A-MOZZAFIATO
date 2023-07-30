@@ -28,8 +28,7 @@ public class ProfileNegotiate2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_negotiate2);
 
-        imageView = findViewById(R.id.imageView);
-        buttonChooseImage = findViewById(R.id.buttonChooseImage);
+        buttonChooseImage = findViewById(R.id.profile_negotiate_input_images);
 
         buttonChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override

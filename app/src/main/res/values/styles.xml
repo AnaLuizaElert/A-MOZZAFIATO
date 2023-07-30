@@ -38,7 +38,7 @@
 
     <style name="StyleImageCardCategories" parent="Widget.AppCompat.ImageButton">
         <item name="android:scaleType">centerCrop</item>
-        <item name="android:background">@drawable/rounded_border_img</item> <!-- Referência ao arquivo rounded_border.xml -->
+        <item name="android:background">@drawable/rounded_border_white</item> <!-- Referência ao arquivo rounded_border.xml -->
         <item name="android:backgroundTint">@color/lightGray</item>
     </style>
 
