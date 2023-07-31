@@ -35,7 +35,7 @@
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:backgroundTint="@color/grayMozzafiato"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="10dp"

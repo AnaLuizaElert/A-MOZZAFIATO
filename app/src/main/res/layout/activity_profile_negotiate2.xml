@@ -35,7 +35,7 @@
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="60dp"
                 android:backgroundTint="@color/grayMozzafiato"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="10dp"
@@ -54,7 +54,7 @@
                         android:paddingStart="20dp">
 
                         <ImageView
-                            android:id="@+id/profile_negotiate_come_back_profile"
+                            android:id="@+id/profile_negotiate2_come_back_negotiate"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:background="@drawable/arrow_left"/>
@@ -106,7 +106,7 @@
                                 android:ems="10"
                                 android:textAlignment="viewStart"
                                 android:textSize="18sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                         </androidx.cardview.widget.CardView>
 
@@ -155,7 +155,8 @@
                                 android:layout_height="wrap_content"
                                 android:buttonTint="@color/white"
                                 android:text="@string/profile_negotiate_automatic"
-                                android:textColor="@color/white"  />
+                                android:textColor="@color/white"
+                                tools:ignore="TouchTargetSizeCheck" />
 
                             <RadioButton
                                 android:id="@+id/profile_negotiate_radio_manual"
@@ -164,7 +165,8 @@
                                 android:layout_marginStart="20dp"
                                 android:buttonTint="@color/white"
                                 android:text="@string/profile_negotiate_manual"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                tools:ignore="TouchTargetSizeCheck"  />
 
                         </RadioGroup>
 
@@ -190,7 +192,8 @@
                                 android:layout_height="wrap_content"
                                 android:buttonTint="@color/white"
                                 android:text="@string/yes"
-                                android:textColor="@color/white"  />
+                                android:textColor="@color/white"
+                                tools:ignore="TouchTargetSizeCheck"   />
 
                             <RadioButton
                                 android:id="@+id/profile_negotiate_radio_not"
@@ -199,7 +202,8 @@
                                 android:layout_marginStart="20dp"
                                 android:buttonTint="@color/white"
                                 android:text="@string/not"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                tools:ignore="TouchTargetSizeCheck"  />
 
                         </RadioGroup>
 
@@ -233,12 +237,13 @@
                                 android:inputType="textMultiLine"
                                 android:textColor="@color/black"
                                 android:typeface="normal"
+                                tools:ignore="SpeakableTextPresentCheck"
                                 />
 
                         </androidx.cardview.widget.CardView>
 
                         <Button
-                            android:id="@+id/profile_negotiate_button_next"
+                            android:id="@+id/profile_negotiate_button_send"
                             android:layout_width="300dp"
                             android:layout_height="42dp"
                             android:layout_gravity="start"
@@ -246,8 +251,8 @@
                             android:background="@drawable/rounded_border"
                             android:textSize="18sp"
                             android:fontFamily="@font/forumregular"
-                            android:text="@string/profile_negotiate_button_next"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                            android:text="@string/button_send"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                     </LinearLayout>
 
