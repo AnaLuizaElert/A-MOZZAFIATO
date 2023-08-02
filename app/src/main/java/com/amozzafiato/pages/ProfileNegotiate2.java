@@ -4,38 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.amozzafiato.R;
 import com.amozzafiato.pages.fragments.Profile;
 
-import java.io.IOException;
 
 public class ProfileNegotiate2 extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-
-    private ImageView comeBack;
-    private Button buttonChooseImage, buttonSend;
     private Uri imageUri;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_negotiate2);
 
-        buttonChooseImage = findViewById(R.id.profile_negotiate_input_images);
-        buttonSend = findViewById(R.id.profile_negotiate_button_send);
-        comeBack = findViewById(R.id.profile_negotiate2_come_back_negotiate);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buttonChooseImage = findViewById(R.id.profile_negotiate2_input_images);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buttonSend = findViewById(R.id.profile_negotiate2_button_send);
+        ImageView comeBack = findViewById(R.id.profile_negotiate2_come_back_negotiate);
 
         buttonSend.setOnClickListener(v -> {
+            System.out.println("Negotiete 2222");
             Intent intent = new Intent(ProfileNegotiate2.this, Profile.class);
             startActivity(intent);
         });
