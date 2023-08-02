@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.amozzafiato.pages.PageCar;
-
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, PageCar.class);
+                Intent intent = new Intent(MainActivity.this, Splash.class);
                 startActivity(intent);
                 finish();
             }
