@@ -88,17 +88,11 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_weight="1" />
-
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_border"
                 android:backgroundTint="@color/white"
-                android:padding="20dp"
                 tools:ignore="SpeakableTextPresentCheck">
 
                 <LinearLayout
@@ -107,7 +101,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
@@ -124,6 +118,7 @@
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
                             android:text="Nissan R34 Skyline GT-R"
+                            android:textColor="@color/black"
                             android:textSize="20sp" />
 
                         <TextView
@@ -133,31 +128,101 @@
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
                             android:text="R$ 155 MIL"
+                            android:textColor="@color/black"
                             android:textSize="20sp" />
 
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/vertical_line_news"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp">
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/carro"
                             android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="Nissan R34 Skyline GT-R"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="R$ 155 MIL"
+                            android:textSize="20sp" />
+
                     </LinearLayout>
 
+                    <ImageView
+                        android:id="@+id/vertical_line_news2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp">
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/carro"
                             android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="Nissan R34 Skyline GT-R"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="R$ 155 MIL"
+                            android:textSize="20sp" />
+
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/vertical_line_news3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
 
                 </LinearLayout>
 

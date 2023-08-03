@@ -6,6 +6,50 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
+import android.widget.Space;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.Fragment;
+
+import com.amozzafiato.R;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.Space;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.amozzafiato.R;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.Space;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.amozzafiato.R;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Space;
 
@@ -19,9 +63,8 @@ public class Home extends Fragment {
 
     private Space emptySpace;
     private ScrollView scrollView;
-    private LinearLayout.LayoutParams layoutParams;
     private int originalSpaceHeight;
-    private int previousScrollY;
+    private Button seeCollectionButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,13 +73,11 @@ public class Home extends Fragment {
         // Inicializa as Views
         emptySpace = view.findViewById(R.id.emptySpace);
         scrollView = view.findViewById(R.id.scrollView);
-        layoutParams = (LinearLayout.LayoutParams) emptySpace.getLayoutParams();
+        seeCollectionButton = view.findViewById(R.id.fragment_home_button_see_collection);
 
-        // Obtém a altura original do espaço vazio (Space)
+        // Obtém a altura original do espaço vazio (Space) e a altura do botão
         originalSpaceHeight = getResources().getDimensionPixelSize(R.dimen.space_height);
-
-        // Inicializa a posição de rolagem anterior
-        previousScrollY = 0;
+        int buttonHeight = seeCollectionButton.getHeight();
 
         // Escuta as alterações de rolagem do ScrollView
         scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
@@ -45,33 +86,16 @@ public class Home extends Fragment {
                 // Obtém o scrollY atual do ScrollView
                 int scrollY = scrollView.getScrollY();
 
-                // Verifica se o usuário está rolando para cima
-                boolean scrollingUp = scrollY < previousScrollY;
+                // Calcula a altura desejada para o espaço vazio (Space)
+                int desiredSpaceHeight = originalSpaceHeight - scrollY;
 
-                // Se o usuário estiver rolando para cima e o espaço não estiver no topo da tela, ajuste a altura do espaço vazio (Space)
-                if (scrollingUp && emptySpace.getTop() > 0) {
-                    // Calcula a altura desejada para o espaço vazio
-                    int desiredSpaceHeight = layoutParams.height - (previousScrollY - scrollY);
-                    // Certifica-se de que a altura do espaço não seja menor que 0 e não seja maior que a altura original
-                    int clampedSpaceHeight = Math.max(0, Math.min(desiredSpaceHeight, originalSpaceHeight));
-                    // Atualiza a altura do espaço vazio (Space)
-                    layoutParams.height = clampedSpaceHeight;
-                    emptySpace.setLayoutParams(layoutParams);
-                } else {
-                    // Se o usuário estiver rolando para baixo e o espaço não estiver com a altura original, aumente a altura do espaço vazio (Space)
-                    if (emptySpace.getLayoutParams().height < originalSpaceHeight) {
-                        // Calcula a altura desejada para o espaço vazio
-                        int desiredSpaceHeight = layoutParams.height + (scrollY - previousScrollY);
-                        // Certifica-se de que a altura do espaço não seja menor que 0 e não seja maior que a altura original
-                        int clampedSpaceHeight = Math.max(0, Math.min(desiredSpaceHeight, originalSpaceHeight));
-                        // Atualiza a altura do espaço vazio (Space)
-                        layoutParams.height = clampedSpaceHeight;
-                        emptySpace.setLayoutParams(layoutParams);
-                    }
-                }
+                // Certifique-se de que o espaço vazio não seja menor que a altura do botão + um espaço mínimo
+                int minSpaceHeight = buttonHeight + getResources().getDimensionPixelSize(R.dimen.space_min_height);
+                int clampedSpaceHeight = Math.max(minSpaceHeight, desiredSpaceHeight);
 
-                // Atualiza a posição de rolagem anterior
-                previousScrollY = scrollY;
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) emptySpace.getLayoutParams();
+                layoutParams.height = clampedSpaceHeight;
+                emptySpace.setLayoutParams(layoutParams);
             }
         });
 
