@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="30dp"
+    android:background="@color/grayMozzafiato"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/text_view_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/forumregular"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Recebemos sua mensagem!"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/forumregular"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Mais informações serão enviadas por email!"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button_dialog_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_border"
+        android:backgroundTint="@color/blueMozzafiato"
+        android:padding="8dp"
+        android:text="OK"
+        android:textColor="@color/white" />
+
+</LinearLayout>

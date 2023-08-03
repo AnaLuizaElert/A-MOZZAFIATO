@@ -1,14 +1,292 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/black_car_wallpaper"
+    android:orientation="vertical"
     tools:context=".pages.fragments.Home">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/registerAppName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Kafka" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/forumregular"
+        android:text="@string/app_name"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
-</FrameLayout>
+    <Space
+        android:id="@+id/emptySpace"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/rounded_border"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/fragment_home_button_see_collection"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/rounded_border"
+                android:fontFamily="@font/forumregular"
+                android:text="ACESSE NOSSA COLEÇÃO"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                tools:ignore="TextContrastCheck" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:textAlignment="center">
+
+                <ImageView
+                    android:id="@+id/line_news_left"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/blackline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/forumregular"
+                    android:gravity="center|center_vertical"
+                    android:text="NOVIDADES"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/line_news_right"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/blackline" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_border"
+                android:backgroundTint="@color/white"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/carro"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:text="Nissan R34 Skyline GT-R"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:text="R$ 155 MIL"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/vertical_line_news"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/carro"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="Nissan R34 Skyline GT-R"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="R$ 155 MIL"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/vertical_line_news2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
+                    <LinearLayout
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/carro"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="Nissan R34 Skyline GT-R"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/forumregular"
+                            android:gravity="center_vertical|end"
+                            android:textColor="@color/black"
+                            android:text="R$ 155 MIL"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/vertical_line_news3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/blackline_vertical" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:textAlignment="center">
+
+                <ImageView
+                    android:id="@+id/line_about_us_left"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/blackline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/forumregular"
+                    android:gravity="center|center_vertical"
+                    android:text="SOBRE NÓS"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/line_about_us_right"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/blackline" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:fontFamily="@font/forumregular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Nós da A MOZZAFIATO oferecemos carros com história, carros clássicos que carregam lembranças. Prezamos pela transparência na venda de carros antigos, tendo como primordial objetivo a cumplicidade com seus clientes."/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
