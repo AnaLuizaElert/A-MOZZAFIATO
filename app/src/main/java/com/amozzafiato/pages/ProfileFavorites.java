@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.amozzafiato.AdapterFavorites;
 import com.amozzafiato.Favorite;
 import com.amozzafiato.R;
 
@@ -24,7 +25,7 @@ public class ProfileFavorites extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Favorite.createFavorites();
         ArrayList<Favorite> list = Favorite.listContact;
-        MyAdapter adapter = new MyAdapter(list);
+        AdapterFavorites adapter = new AdapterFavorites(list);
         recyclerView.setAdapter(adapter);
     }
 }

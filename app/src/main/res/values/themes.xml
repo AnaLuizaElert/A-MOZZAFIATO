@@ -13,7 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
-        <item name="android:windowBackground">@drawable/background_profile</item>
+        <item name="android:windowBackground">@drawable/background_gradient</item>
     </style>
 
 </resources>
