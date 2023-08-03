@@ -2,6 +2,9 @@ package com.amozzafiato.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -11,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import com.amozzafiato.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileData extends AppCompatActivity {
 
@@ -19,7 +23,7 @@ public class ProfileData extends AppCompatActivity {
     private Button editButton;
     private boolean isEditing = false;
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "NonConstantResourceId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
