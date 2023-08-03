@@ -5,6 +5,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="button_send">ENVIAR</string>
+    <string name="yes">sim</string>
+    <string name="not">não</string>
 
     <string name="title_register">Cadastrar</string>
     <string name="category_input_phone">Telefone</string>
@@ -38,6 +40,25 @@
     <string name="profile_data_phone">(47) 99999-9999</string>
     <string name="profile_data_email">natalia@gmail.com</string>
     <string name="profile_data_password">********</string>
+
+
+    <string name="profile_negotiate_title">Negociar automóvel</string>
+    <string name="profile_negotiate_name_car">Nome do automóvel *</string>
+    <string name="profile_negotiate_model">Modelo *</string>
+    <string name="profile_negotiate_year">Ano *</string>
+    <string name="profile_negotiate_km">Km rodados *</string>
+    <string name="profile_negotiate_fuel">Combustível *</string>
+    <string name="profile_negotiate_color">Cor *</string>
+    <string name="profile_negotiate_price">Preço(reais) *</string>
+    <string name="profile_negotiate_images">Imagens do carro *</string>
+    <string name="profile_negotiate_images_hint">Fazer uplad</string>
+    <string name="profile_negotiate_exchange">Câmbio *</string>
+    <string name="profile_negotiate_manual">manual</string>
+    <string name="profile_negotiate_automatic">automático</string>
+    <string name="profile_negotiate_original">Original? *</string>
+    <string name="profile_negotiate_obs">Observação</string>
+
+    <string name="profile_negotiate_button_next">Próximo</string>
 
 
 </resources>

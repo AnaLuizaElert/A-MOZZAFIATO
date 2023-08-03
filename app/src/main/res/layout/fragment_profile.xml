@@ -123,6 +123,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/link_data_favorites"
                     android:layout_width="180dp"
                     android:layout_height="60dp"
                     app:cardElevation="10dp"
@@ -146,6 +147,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/link_data_negotiate"
                     android:layout_width="280dp"
                     android:layout_height="60dp"
                     app:cardElevation="10dp"
