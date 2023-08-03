@@ -1,6 +1,10 @@
 package com.amozzafiato;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, 3000);
-    }
 
+    }
 }

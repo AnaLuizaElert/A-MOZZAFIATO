@@ -2,25 +2,19 @@ package com.amozzafiato.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.amozzafiato.R;
+import com.amozzafiato.pages.fragments.Profile;
 
-import java.io.IOException;
 
 public class ProfileNegotiate2 extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-
-    private ImageView imageView;
-    private Button buttonChooseImage;
     private Uri imageUri;
 
     @Override
@@ -28,13 +22,23 @@ public class ProfileNegotiate2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_negotiate2);
 
-        buttonChooseImage = findViewById(R.id.profile_negotiate_input_images);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buttonChooseImage = findViewById(R.id.profile_negotiate2_input_images);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buttonSend = findViewById(R.id.profile_negotiate2_button_send);
+        ImageView comeBack = findViewById(R.id.profile_negotiate2_come_back_negotiate);
 
-        buttonChooseImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGallery();
-            }
+        buttonSend.setOnClickListener(v -> {
+            System.out.println("Negotiete 2222");
+            Intent intent = new Intent(ProfileNegotiate2.this, Profile.class);
+            startActivity(intent);
+        });
+
+        comeBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileNegotiate2.this, ProfileNegotiate.class);
+            startActivity(intent);
+        });
+
+        buttonChooseImage.setOnClickListener(v -> {
+            openGallery();
         });
     }
 
@@ -54,13 +58,6 @@ public class ProfileNegotiate2 extends AppCompatActivity {
                 && data != null
                 && data.getData() != null) {
             imageUri = data.getData();
-
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                imageView.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

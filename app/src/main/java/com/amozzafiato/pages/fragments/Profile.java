@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import com.amozzafiato.pages.ProfileContact;
 import com.amozzafiato.R;
 import com.amozzafiato.pages.ProfileData;
+import com.amozzafiato.pages.ProfileFavorites;
 import com.amozzafiato.pages.ProfileNegotiate;
 
 public class Profile extends Fragment {
@@ -55,6 +56,8 @@ public class Profile extends Fragment {
         CardView linkContact = view.findViewById(R.id.link_contact_profile);
         CardView linkData = view.findViewById(R.id.link_data_profile);
         CardView linkNegotiate = view.findViewById(R.id.link_data_negotiate);
+        CardView linkFavorites = view.findViewById(R.id.link_data_favorites);
+
 
         linkContact.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), ProfileContact.class);
@@ -68,6 +71,11 @@ public class Profile extends Fragment {
 
         linkNegotiate.setOnClickListener(v ->  {
             Intent intent = new Intent(getActivity(), ProfileNegotiate.class);
+            startActivity(intent);
+        });
+
+        linkFavorites.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), ProfileFavorites.class);
             startActivity(intent);
         });
 
