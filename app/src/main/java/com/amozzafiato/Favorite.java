@@ -14,11 +14,9 @@ public class Favorite {
     }
 
     public static void createFavorites(){
-        for(int i = 0; i < 100; i ++){
             listContact.add(new Favorite("Nissan R34 Skyline GT-R", R.drawable.carro));
             listContact.add(new Favorite("Golf GTI W12",  R.drawable.carro));
             listContact.add(new Favorite("Dodge Challenger SE - 1972", R.drawable.carro));
-        }
     }
 
     public String getNameCar() {

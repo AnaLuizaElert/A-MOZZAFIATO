@@ -47,14 +47,13 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal"
-                        android:gravity="center"
-                        android:background="@color/grayInput">
+                        android:gravity="center">
 
                         <ImageView
                             android:id="@+id/profile_favorites_come_back_profile"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/arrow_left"/>
+                            android:background="@drawable/arrow_left_black"/>
 
                         <TextView
                             android:layout_width="370dp"
