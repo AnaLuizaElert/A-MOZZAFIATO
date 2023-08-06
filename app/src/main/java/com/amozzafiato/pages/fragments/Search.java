@@ -1,14 +1,24 @@
 package com.amozzafiato.pages.fragments;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.amozzafiato.R;
+import com.amozzafiato.Searching;
+import com.amozzafiato.pages.SearchingCar;
+import com.amozzafiato.pages.profile.ProfileContact;
+import com.amozzafiato.pages.profile.ProfileData;
+import com.amozzafiato.pages.profile.ProfileFavorites;
+import com.amozzafiato.pages.profile.ProfileNegotiate;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,7 +70,65 @@ public class Search extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+
+        // Configurar o clique do botão no CardView
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView european = view.findViewById(R.id.search_european_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView american = view.findViewById(R.id.search_american_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView convertible = view.findViewById(R.id.search_convertible_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView coupe = view.findViewById(R.id.search_coupe_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView hot = view.findViewById(R.id.search_hot_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView pickup = view.findViewById(R.id.search_pickup_category);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView national = view.findViewById(R.id.search_national_category);
+
+
+        european.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            // Passando o parâmetro para a próxima página
+            intent.putExtra("category", "europeu");
+            startActivity(intent);
+        });
+
+        american.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "american");
+            startActivity(intent);
+        });
+
+        convertible.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "conversível");
+            startActivity(intent);
+        });
+
+        coupe.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "coupe");
+            startActivity(intent);
+        });
+
+        hot.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "hot");
+            startActivity(intent);
+        });
+
+        pickup.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "pickup");
+            startActivity(intent);
+        });
+
+        national.setOnClickListener(v ->  {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "nacional");
+            startActivity(intent);
+        });
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        return view;
+
     }
 }

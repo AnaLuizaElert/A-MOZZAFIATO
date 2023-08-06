@@ -1,4 +1,4 @@
-package com.amozzafiato.pages;
+package com.amozzafiato.pages.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,7 +24,7 @@ public class ProfileFavorites extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Favorite.createFavorites();
-        ArrayList<Favorite> list = Favorite.listContact;
+        ArrayList<Favorite> list = Favorite.listFavorite;
         AdapterFavorites adapter = new AdapterFavorites(list);
         recyclerView.setAdapter(adapter);
     }

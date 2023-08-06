@@ -1,10 +1,13 @@
 package com.amozzafiato.pages.fragments;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
 
@@ -58,6 +61,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.amozzafiato.R;
+import com.amozzafiato.pages.SearchingCar;
 
 public class Home extends Fragment {
 
@@ -78,6 +82,16 @@ public class Home extends Fragment {
         // Obtém a altura original do espaço vazio (Space) e a altura do botão
         originalSpaceHeight = getResources().getDimensionPixelSize(R.dimen.space_height);
         int buttonHeight = seeCollectionButton.getHeight();
+        // Rolando para o topo da página
+        scrollView.post(() -> scrollView.scrollTo(0, 0));
+
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button colection = view.findViewById(R.id.fragment_home_button_see_collection);
+
+        colection.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            startActivity(intent);
+        });
 
         // Escuta as alterações de rolagem do ScrollView
         scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
@@ -86,11 +100,14 @@ public class Home extends Fragment {
                 // Obtém o scrollY atual do ScrollView
                 int scrollY = scrollView.getScrollY();
 
-                // Calcula a altura desejada para o espaço vazio (Space)
-                int desiredSpaceHeight = originalSpaceHeight - scrollY;
+                // Ajuste o fator de ajuste para controlar a rapidez da diminuição do espaço
+                float sizeAdjustmentFactor = 0.8f; // Experimente diferentes valores
 
-                // Certifique-se de que o espaço vazio não seja menor que a altura do botão + um espaço mínimo
-                int minSpaceHeight = buttonHeight + getResources().getDimensionPixelSize(R.dimen.space_min_height);
+                // Calcula a altura desejada para o espaço vazio de acordo com o fator de ajuste
+                int desiredSpaceHeight = (int) (originalSpaceHeight - scrollY * sizeAdjustmentFactor);
+
+                // Limita a altura mínima
+                int minSpaceHeight = 10;
                 int clampedSpaceHeight = Math.max(minSpaceHeight, desiredSpaceHeight);
 
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) emptySpace.getLayoutParams();

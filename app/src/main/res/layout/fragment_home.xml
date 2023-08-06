@@ -21,7 +21,7 @@
     <Space
         android:id="@+id/emptySpace"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="550dp" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -284,6 +284,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_weight="1" />
+
+            <Space
+                android:id="@+id/emptySpaceEnd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
         </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.amozzafiato.pages;
+package com.amozzafiato.pages.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 

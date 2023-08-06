@@ -6,8 +6,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ViewHolderFavorites extends RecyclerView.ViewHolder {
+import com.amozzafiato.R;
 
+public class ViewHolderFavorites extends RecyclerView.ViewHolder {
 
         public TextView name;
         public ImageView image;

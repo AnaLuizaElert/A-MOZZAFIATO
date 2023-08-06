@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_profile"
     android:orientation="horizontal"
-    tools:context=".pages.ProfileContact">
+    tools:context=".pages.profile.ProfileContact">
 
     <RelativeLayout
         android:layout_width="match_parent"

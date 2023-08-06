@@ -9,13 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.amozzafiato.pages.ProfileContact;
+import com.amozzafiato.pages.profile.ProfileContact;
 import com.amozzafiato.R;
-import com.amozzafiato.pages.ProfileData;
-import com.amozzafiato.pages.ProfileFavorites;
-import com.amozzafiato.pages.ProfileNegotiate;
+import com.amozzafiato.pages.profile.ProfileData;
+import com.amozzafiato.pages.profile.ProfileFavorites;
+import com.amozzafiato.pages.profile.ProfileNegotiate;
 
 public class Profile extends Fragment {
 
