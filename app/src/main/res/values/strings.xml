@@ -20,6 +20,14 @@
     <string name="link_register">Cadastre-se</string>
     <string name="link_forgot_password">Esqueceu a senha?</string>
 
+
+    <string name="forgot_password_title">Recuperar conta</string>
+    <string name="forgot_password_description">
+        Forneça o endereço de e-mail associado à sua conta.
+        Assim, poderemos enviar as instruções necessárias para a recuperação.
+    </string>
+    <string name="forgot_send_email">Receber email</string>
+
     <string name="title_category">Categorias</string>
     <string name="placeholder_search">Pesquise</string>
     <string name="title_colection">Coleção</string>

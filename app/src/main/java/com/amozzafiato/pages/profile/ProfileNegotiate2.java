@@ -30,11 +30,13 @@ public class ProfileNegotiate2 extends AppCompatActivity {
             System.out.println("Negotiete 2222");
             Intent intent = new Intent(ProfileNegotiate2.this, Profile.class);
             startActivity(intent);
+            finish();
         });
 
         comeBack.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileNegotiate2.this, ProfileNegotiate.class);
             startActivity(intent);
+            finish();
         });
 
         buttonChooseImage.setOnClickListener(v -> {

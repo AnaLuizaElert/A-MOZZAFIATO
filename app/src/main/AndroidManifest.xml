@@ -8,6 +8,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Amozzafiato"
         tools:targetApi="31">
+        <activity
+            android:name=".pages.ForgotPassword"
+            android:exported="false" />
         <activity
             android:name=".pages.SearchingCar"
             android:exported="false" />

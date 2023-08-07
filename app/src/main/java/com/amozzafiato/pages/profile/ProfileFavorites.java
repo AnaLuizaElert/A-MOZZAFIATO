@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.amozzafiato.AdapterFavorites;
 import com.amozzafiato.Favorite;
@@ -27,5 +30,11 @@ public class ProfileFavorites extends AppCompatActivity {
         ArrayList<Favorite> list = Favorite.listFavorite;
         AdapterFavorites adapter = new AdapterFavorites(list);
         recyclerView.setAdapter(adapter);
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView linkProfile = findViewById(R.id.profile_favorites_come_back_profile);
+
+        linkProfile.setOnClickListener(v -> {
+            onBackPressed();
+        });
     }
 }

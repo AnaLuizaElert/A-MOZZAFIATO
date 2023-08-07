@@ -1,16 +1,16 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace 'com.amozzafiato'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.amozzafiato"
-        minSdk 31
-        targetSdk 33
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 

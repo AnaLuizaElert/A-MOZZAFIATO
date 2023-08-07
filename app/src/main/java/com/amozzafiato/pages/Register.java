@@ -30,8 +30,8 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
         FirebaseApp.initializeApp(this);
+        setContentView(R.layout.activity_register);
 
         /*Iniciando variáveis*/
         name = findViewById(R.id.register_name_edit);
@@ -92,7 +92,6 @@ public class Register extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                         .addOnCompleteListener(this, task -> {
                             if (task.isSuccessful()) {
-
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 saveUserDataToFirestore(name.getText().toString(), phone.getText().toString(), email.getText().toString(), password.getText().toString());
 
@@ -102,7 +101,6 @@ public class Register extends AppCompatActivity {
                                 if (e instanceof FirebaseAuthException) {
                                     String errorCode = ((FirebaseAuthException) e).getErrorCode();
                                 }
-
                             }
                         });
             }
@@ -131,7 +129,7 @@ public class Register extends AppCompatActivity {
                     finish();
                 })
                 .addOnFailureListener(e -> {
-                    // Lidar com falha ao salvar os dados
+
                 });
     }
 }

@@ -23,6 +23,7 @@ public class ProfileNegotiate extends AppCompatActivity {
         linkPage2.setOnClickListener(v -> {
             Intent intent = new Intent(ProfileNegotiate.this, ProfileNegotiate2.class);
             startActivity(intent);
+            finish();
         });
 
         linkProfile.setOnClickListener(v -> {
