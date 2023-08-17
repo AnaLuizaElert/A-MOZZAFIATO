@@ -9,7 +9,9 @@
     <string name="not">não</string>
 
     <string name="title_register">Cadastrar</string>
-    <string name="category_input_phone">Telefone</string>
+    <string name="category_input_image">Url de uma foto sua</string>
+    <string name="category_input_country">Pais</string>
+    <string name="category_input_state">Estado</string>
     <string name="category_input_name">Nome</string>
     <string name="category_input_email">Email</string>
     <string name="category_input_password">Senha</string>
@@ -46,7 +48,9 @@
     <string name="profile_contact_description">Escreva sua mensagem</string>
 
     <string name="profile_data_title">Meus dados</string>
-    <string name="profile_data_phone">(47) 99999-9999</string>
+    <string name="profile_data_image">asd</string>
+    <string name="profile_data_country">Brasil</string>
+    <string name="profile_data_state">Santa Catarina</string>
     <string name="profile_data_email">natalia@gmail.com</string>
     <string name="profile_data_password">********</string>
 

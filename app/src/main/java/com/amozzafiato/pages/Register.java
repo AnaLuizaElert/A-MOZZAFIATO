@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
-    private TextInputEditText name, phone, email, password, confpassword;
+    private TextInputEditText name, country, state, image, email, password, confpassword;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,7 +35,9 @@ public class Register extends AppCompatActivity {
 
         /*Iniciando variáveis*/
         name = findViewById(R.id.register_name_edit);
-        phone = findViewById(R.id.register_phone_edit);
+        country = findViewById(R.id.register_country_edit);
+        state = findViewById(R.id.register_state_edit);
+        image = findViewById(R.id.register_image_edit);
         email = findViewById(R.id.register_email_edit);
         password = findViewById(R.id.register_password_edit);
         confpassword = findViewById(R.id.register_confpassword_edit);
@@ -58,8 +60,18 @@ public class Register extends AppCompatActivity {
                 isValid = false;
             }
 
-            if (phone.getText().toString().isEmpty()) {
-                phone.setError("Campo obrigatório");
+            if (state.getText().toString().isEmpty()) {
+                state.setError("Campo obrigatório");
+                isValid = false;
+            }
+
+            if (country.getText().toString().isEmpty()) {
+                country.setError("Campo obrigatório");
+                isValid = false;
+            }
+
+            if (image.getText().toString().isEmpty()) {
+                image.setError("Campo obrigatório");
                 isValid = false;
             }
 
@@ -92,44 +104,60 @@ public class Register extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                         .addOnCompleteListener(this, task -> {
                             if (task.isSuccessful()) {
+
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                saveUserDataToFirestore(name.getText().toString(), phone.getText().toString(), email.getText().toString(), password.getText().toString());
+                                assert user != null;
+                                String userId = user.getUid(); // Obtém o ID único do usuário
+
+                                saveUserDataToFirestore(
+                                        userId, // Passe o ID do usuário para usar como ID do documento
+                                        name.getText().toString(),
+                                        country.getText().toString(),
+                                        state.getText().toString(),
+                                        image.getText().toString(),
+                                        email.getText().toString(),
+                                        password.getText().toString()
+                                );
+
 
                             } else {
-
                                 Exception e = task.getException();
                                 if (e instanceof FirebaseAuthException) {
                                     String errorCode = ((FirebaseAuthException) e).getErrorCode();
                                 }
                             }
                         });
+
             }
 
         });
     }
 
     private void saveUserDataToFirestore(
-            String name, String phone,String email, String password
+            String userId, String name, String country, String state, String image, String email, String password
             ) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Crie um mapa com os dados do usuário
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("name", name);
-        userMap.put("phone", phone);
+        userMap.put("country", country);
+        userMap.put("state", state);
+        userMap.put("image", image);
         userMap.put("email", email);
         userMap.put("password", password);
 
         // Adicione os dados ao Firestore
-        db.collection("users").document(email)
+        db.collection("TbUser").document(userId) // Use o ID do usuário como ID do documento
                 .set(userMap)
                 .addOnSuccessListener(aVoid -> {
+                    // Dados salvos com sucesso
                     Intent intent = new Intent(Register.this, NavigationPage.class);
                     startActivity(intent);
                     finish();
                 })
                 .addOnFailureListener(e -> {
-
+                    // Trate o erro, se necessário
                 });
     }
 }

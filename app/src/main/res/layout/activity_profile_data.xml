@@ -37,7 +37,7 @@
                 app:cardElevation="10dp"
                 app:cardPreventCornerOverlap="false"
                 app:cardCornerRadius="25dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginStart="-20dp"
 
                 android:backgroundTint="@color/grayMozzafiato">
@@ -142,7 +142,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="0dp"
                         android:layout_marginBottom="40dp"
                         android:paddingStart="50dp">
 
@@ -192,7 +192,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_phone"
+                            android:text="@string/category_input_image"
                             android:textColor="@color/white"
                             android:textAlignment="textStart"
                             android:textSize="16sp"/>
@@ -205,7 +205,7 @@
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
                             <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_phone"
+                                android:id="@+id/profile_data_card_image"
                                 android:layout_width="298dp"
                                 android:layout_height="40dp"
                                 app:cardBackgroundColor="@color/grayMozzafiato"
@@ -215,13 +215,95 @@
                                 app:cardPreventCornerOverlap="false">
 
                                 <EditText
-                                    android:id="@+id/profile_data_input_phone"
+                                    android:id="@+id/profile_data_input_image"
                                     style="@style/StyleInputData"
                                     android:layout_width="298dp"
                                     android:layout_height="40dp"
                                     android:ems="10"
                                     android:enabled="false"
-                                    android:text="@string/profile_data_phone"
+                                    android:text="@string/profile_data_image"
+                                    android:textAlignment="gravity"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/forumregular"
+                            android:text="@string/category_input_country"
+                            android:textColor="@color/white"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="300dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="10dp"
+                            app:cardPreventCornerOverlap="false">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/profile_data_card_country"
+                                android:layout_width="298dp"
+                                android:layout_height="40dp"
+                                app:cardBackgroundColor="@color/grayMozzafiato"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="10dp"
+                                android:layout_gravity="center"
+                                app:cardPreventCornerOverlap="false">
+
+                                <EditText
+                                    android:id="@+id/profile_data_input_country"
+                                    style="@style/StyleInputData"
+                                    android:layout_width="298dp"
+                                    android:layout_height="40dp"
+                                    android:ems="10"
+                                    android:enabled="false"
+                                    android:text="@string/profile_data_country"
+                                    android:textAlignment="gravity"
+                                    android:textSize="18sp"
+                                    tools:ignore="TouchTargetSizeCheck" />
+                            </androidx.cardview.widget.CardView>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/forumregular"
+                            android:text="@string/category_input_state"
+                            android:textColor="@color/white"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="300dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="5dp"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="10dp"
+                            app:cardPreventCornerOverlap="false">
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/profile_data_card_state"
+                                android:layout_width="298dp"
+                                android:layout_height="40dp"
+                                app:cardBackgroundColor="@color/grayMozzafiato"
+                                app:cardCornerRadius="25dp"
+                                app:cardElevation="10dp"
+                                android:layout_gravity="center"
+                                app:cardPreventCornerOverlap="false">
+
+                                <EditText
+                                    android:id="@+id/profile_data_input_state"
+                                    style="@style/StyleInputData"
+                                    android:layout_width="298dp"
+                                    android:layout_height="40dp"
+                                    android:ems="10"
+                                    android:enabled="false"
+                                    android:text="@string/profile_data_country"
                                     android:textAlignment="gravity"
                                     android:textSize="18sp"
                                     tools:ignore="TouchTargetSizeCheck" />

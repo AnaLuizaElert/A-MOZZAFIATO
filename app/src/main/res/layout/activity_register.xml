@@ -69,7 +69,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_phone_layout"
+            android:id="@+id/register_email_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -87,16 +87,16 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_phone_edit"
+                android:id="@+id/register_email_edit"
                 style="@style/StyleTextField"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/category_input_phone" />
+
+                android:hint="@string/category_input_email"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_email_layout"
+            android:id="@+id/register_image_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -114,12 +114,66 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_email_edit"
+                android:id="@+id/register_image_edit"
                 style="@style/StyleTextField"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/category_input_image" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                android:hint="@string/category_input_email"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_country_layout"
+            style="@style/StyleInput"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="440dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="230dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_country_edit"
+                style="@style/StyleTextField"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/category_input_country" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_state_layout"
+            style="@style/StyleInput"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="230dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_state_edit"
+                style="@style/StyleTextField"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/category_input_state" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -132,7 +186,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="590dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:endIconMode="password_toggle"
@@ -162,7 +216,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="670dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:endIconMode="password_toggle"
@@ -189,7 +243,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="630dp"
+            android:layout_marginTop="740dp"
             android:layout_marginEnd="50dp"
             android:text="@string/title_register"
             android:background="@drawable/rounded_border" />
@@ -202,7 +256,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="92dp"
-            android:layout_marginTop="690dp"
+            android:layout_marginTop="810dp"
             android:layout_marginEnd="92dp"
             android:textAlignment="center"
             android:fontFamily="@font/forumregular"

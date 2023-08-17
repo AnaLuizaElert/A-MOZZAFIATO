@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,12 +31,16 @@ public class ProfileData extends AppCompatActivity {
         setContentView(R.layout.activity_profile_data);
 
         inputName = findViewById(R.id.profile_data_input_name);
-        inputPhone = findViewById(R.id.profile_data_input_phone);
+        inputPhone = findViewById(R.id.profile_data_input_country);
+        inputPhone = findViewById(R.id.profile_data_input_state);
+        inputPhone = findViewById(R.id.profile_data_input_image);
         inputEmail = findViewById(R.id.profile_data_input_email);
         inputPassword = findViewById(R.id.profile_data_input_password);
 
         cardName = findViewById(R.id.profile_data_card_name);
-        cardPhone = findViewById(R.id.profile_data_card_phone);
+        cardPhone = findViewById(R.id.profile_data_card_country);
+        cardPhone = findViewById(R.id.profile_data_card_state);
+        cardPhone = findViewById(R.id.profile_data_card_image);
         cardEmail = findViewById(R.id.profile_data_card_email);
         cardPassword = findViewById(R.id.profile_data_card_password);
 
@@ -68,15 +73,21 @@ public class ProfileData extends AppCompatActivity {
 
                     inputPhone.setEnabled(false);
                     inputPhone.setTextColor(getResources().getColor(android.R.color.black));
-                    cardPhone.setCardBackgroundColor(getColor(R.color.grayInput));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        cardPhone.setCardBackgroundColor(getColor(R.color.grayInput));
+                    }
 
                     inputEmail.setEnabled(false);
                     inputEmail.setTextColor(getResources().getColor(android.R.color.black));
-                    cardEmail.setCardBackgroundColor(getColor(R.color.grayInput));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        cardEmail.setCardBackgroundColor(getColor(R.color.grayInput));
+                    }
 
                     inputPassword.setEnabled(false);
                     inputPassword.setTextColor(getResources().getColor(android.R.color.black));
-                    cardPassword.setCardBackgroundColor(getColor(R.color.grayInput));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        cardPassword.setCardBackgroundColor(getColor(R.color.grayInput));
+                    }
 
                     // Hide the edit button
                     editButton.setVisibility(View.GONE);
