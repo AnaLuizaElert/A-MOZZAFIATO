@@ -69,7 +69,7 @@
                             android:fontFamily="@font/forumregular"
                             android:textSize="30sp"
                             android:textAlignment="textStart"
-                            android:text="@string/profile_card_name"
+                            android:text="@string/category_input_name"
                             android:textColor="@color/white">
 
                         </TextView>
@@ -80,7 +80,7 @@
                             android:fontFamily="@font/forumregular"
                             android:textSize="18sp"
                             android:textAlignment="textStart"
-                            android:text="@string/profile_card_state"
+                            android:text="@string/category_input_state"
                             android:textColor="@color/white">
 
                         </TextView>
@@ -179,7 +179,7 @@
                                     android:layout_height="40dp"
                                     android:ems="10"
                                     android:enabled="false"
-                                    android:text="@string/profile_card_name"
+                                    android:text="@string/category_input_name"
                                     android:textAlignment="viewStart"
                                     android:textSize="18sp"
                                     tools:ignore="TouchTargetSizeCheck" />

@@ -9,17 +9,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.amozzafiato.pages.profile.ProfileContact;
 import com.amozzafiato.R;
 import com.amozzafiato.pages.profile.ProfileData;
 import com.amozzafiato.pages.profile.ProfileFavorites;
 import com.amozzafiato.pages.profile.ProfileNegotiate;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Profile extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private TextView userState, userName;
     private String mParam1;
     private String mParam2;
 
@@ -57,6 +62,9 @@ public class Profile extends Fragment {
         CardView linkNegotiate = view.findViewById(R.id.link_data_negotiate);
         CardView linkFavorites = view.findViewById(R.id.link_data_favorites);
 
+        userState = view.findViewById(R.id.profile_state_user);
+        userName = view.findViewById(R.id.profile_name_user);
+
 
         linkContact.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), ProfileContact.class);
@@ -77,6 +85,18 @@ public class Profile extends Fragment {
             Intent intent = new Intent(getActivity(), ProfileFavorites.class);
             startActivity(intent);
         });
+
+        /*Colocar dados do usuário*/
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        db.collection("TbUser").document(userId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        userName.setText(documentSnapshot.getString("name"));
+                        userState.setText(documentSnapshot.getString("state"));
+                    }
+                });
 
         return view;
     }

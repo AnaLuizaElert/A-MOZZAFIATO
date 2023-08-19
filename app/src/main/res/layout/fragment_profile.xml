@@ -70,23 +70,25 @@
                             android:paddingStart="20dp">
 
                             <TextView
+                                android:id="@+id/profile_name_user"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/forumregular"
                                 android:textSize="30sp"
                                 android:textAlignment="textStart"
-                                android:text="@string/profile_card_name"
+                                android:text="@string/category_input_name"
                                 android:textColor="@color/white">
 
                             </TextView>
 
                             <TextView
+                                android:id="@+id/profile_state_user"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/forumregular"
                                 android:textSize="18sp"
                                 android:textAlignment="textStart"
-                                android:text="@string/profile_card_state"
+                                android:text="@string/category_input_state"
                                 android:textColor="@color/white">
 
                             </TextView>

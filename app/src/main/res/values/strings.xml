@@ -34,8 +34,6 @@
     <string name="placeholder_search">Pesquise</string>
     <string name="title_colection">Coleção</string>
 
-    <string name="profile_card_name">Natalia Locsak</string>
-    <string name="profile_card_state">Santa Catarina</string>
     <string name="profile_card_data">Meus dados</string>
     <string name="profile_card_favorite">Favoritos</string>
     <string name="profile_card_negotiate">Negociar automóvel</string>
@@ -64,12 +62,30 @@
     <string name="profile_negotiate_color">Cor *</string>
     <string name="profile_negotiate_price">Preço(reais) *</string>
     <string name="profile_negotiate_images">Imagens do carro *</string>
-    <string name="profile_negotiate_images_hint">Fazer uplad</string>
+    <string name="profile_negotiate_images_hint">Fazer upload</string>
     <string name="profile_negotiate_exchange">Câmbio *</string>
     <string name="profile_negotiate_manual">manual</string>
     <string name="profile_negotiate_automatic">automático</string>
     <string name="profile_negotiate_original">Original? *</string>
     <string name="profile_negotiate_obs">Observação</string>
+
+    <string name="page_car_name">Nome</string>
+    <string name="page_car_see_more">VEJA MAIS</string>
+    <string name="page_car_price">preço</string>
+    <string name="page_car_interest">TENHO INTERESSE</string>
+    <string name="page_car_data">DADOS</string>
+    <string name="page_car_year">ANO:</string>
+    <string name="page_car_km">KM:</string>
+    <string name="page_car_exchange">Câmbio:</string>
+    <string name="page_car_category">Categoria:</string>
+    <string name="page_car_engine">Motor:</string>
+    <string name="page_car_fuel">Combustível:</string>
+    <string name="page_car_traction">Tração:</string>
+    <string name="page_car_max_speed">Velocidade máxima:</string>
+    <string name="page_car_brand">Marca:</string>
+    <string name="page_car_doors">Quantidade de portas:</string>
+    <string name="page_car_cv">Cavalos:</string>
+    <string name="page_car_loading">carregando</string>
 
     <string name="profile_negotiate_button_next">Próximo</string>
 

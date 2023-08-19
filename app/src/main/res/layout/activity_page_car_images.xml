@@ -27,9 +27,9 @@
             <ImageView
                 android:id="@+id/page_car_arrow_back"
                 android:layout_width="10dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_gravity="start|center_vertical"
-                android:layout_weight="1"
+                android:layout_weight="0.1"
                 android:src="@drawable/arrow_left_black" />
 
             <TextView
@@ -45,49 +45,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/page_car_images_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/page_car_images_1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/carro"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/page_car_images_2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/carro"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/page_car_images_3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/carro"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/page_car_images_4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/carro"
-                android:visibility="visible" />
-
-            <ImageView
-                android:id="@+id/page_car_images_5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/carro"
-                android:visibility="visible" />
 
         </LinearLayout>
 
