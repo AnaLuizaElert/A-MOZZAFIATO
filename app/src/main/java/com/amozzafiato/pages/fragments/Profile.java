@@ -16,7 +16,6 @@ import com.amozzafiato.R;
 import com.amozzafiato.pages.profile.ProfileData;
 import com.amozzafiato.pages.profile.ProfileFavorites;
 import com.amozzafiato.pages.profile.ProfileNegotiate;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -96,7 +95,8 @@ public class Profile extends Fragment {
                         userName.setText(documentSnapshot.getString("name"));
                         userState.setText(documentSnapshot.getString("state"));
                     }
-                });
+                }
+        );
 
         return view;
     }

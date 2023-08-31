@@ -1,9 +1,11 @@
 package com.amozzafiato.pages;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -12,12 +14,17 @@ import android.widget.TextView;
 
 import com.amozzafiato.NavigationPage;
 import com.amozzafiato.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +32,11 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     private TextInputEditText name, country, state, image, email, password, confpassword;
+    private TextView linkToLogin;
+    private Button buttonChooseImage, register;
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private static Uri selectedImageUri;
+    private static String idImage;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -37,20 +49,22 @@ public class Register extends AppCompatActivity {
         name = findViewById(R.id.register_name_edit);
         country = findViewById(R.id.register_country_edit);
         state = findViewById(R.id.register_state_edit);
-        image = findViewById(R.id.register_image_edit);
         email = findViewById(R.id.register_email_edit);
         password = findViewById(R.id.register_password_edit);
         confpassword = findViewById(R.id.register_confpassword_edit);
+        register = findViewById(R.id.register_button);
+        buttonChooseImage = findViewById(R.id.register_image_edit);
+        linkToLogin = findViewById(R.id.register_link_login);
 
-
-        /*Underline no texto*/
-        TextView linkToLogin = findViewById(R.id.register_link_login);
+        /*Colocar underline no texto*/
         String linkTextLogin = getResources().getString(R.string.link_forgot_password);
         SpannableString spannableStringPassword = new SpannableString(linkTextLogin);
         spannableStringPassword.setSpan(new UnderlineSpan(), 0, linkTextLogin.length(), 0);
         linkToLogin.setText(spannableStringPassword);
 
-        Button register = findViewById(R.id.register_button);
+        buttonChooseImage.setOnClickListener(v -> {
+            openGallery();
+        });
 
         register.setOnClickListener(v -> {
             boolean isValid = true;
@@ -67,11 +81,6 @@ public class Register extends AppCompatActivity {
 
             if (country.getText().toString().isEmpty()) {
                 country.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (image.getText().toString().isEmpty()) {
-                image.setError("Campo obrigatório");
                 isValid = false;
             }
 
@@ -114,7 +123,6 @@ public class Register extends AppCompatActivity {
                                         name.getText().toString(),
                                         country.getText().toString(),
                                         state.getText().toString(),
-                                        image.getText().toString(),
                                         email.getText().toString(),
                                         password.getText().toString()
                                 );
@@ -134,16 +142,35 @@ public class Register extends AppCompatActivity {
     }
 
     private void saveUserDataToFirestore(
-            String userId, String name, String country, String state, String image, String email, String password
+            String userId, String name, String country, String state, String email, String password
             ) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        // Crie um mapa com os dados do usuário
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference imageRef = storageRef.child("images/" + selectedImageUri.getLastPathSegment());
+        imageRef.putFile(selectedImageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                idImage = uri.toString();
+                            }
+                        });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                    }
+                });
+
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("name", name);
         userMap.put("country", country);
         userMap.put("state", state);
-        userMap.put("image", image);
+        userMap.put("image", idImage);
         userMap.put("email", email);
         userMap.put("password", password);
 
@@ -155,9 +182,32 @@ public class Register extends AppCompatActivity {
                     Intent intent = new Intent(Register.this, NavigationPage.class);
                     startActivity(intent);
                     finish();
-                })
-                .addOnFailureListener(e -> {
-                    // Trate o erro, se necessário
                 });
     }
+
+    private void openGallery() {
+        Intent galleryIntent = new Intent();
+        galleryIntent.setType("image/*");
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+        buttonChooseImage = findViewById(R.id.register_image_edit);
+        buttonChooseImage.setText("Imagem escolhida");
+        startActivityForResult(Intent.createChooser(galleryIntent, "Escolher Imagem"), PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST
+                && resultCode == RESULT_OK
+                && data != null
+                && data.getData() != null) {
+
+            this.selectedImageUri = data.getData();
+
+        }
+
+
+    }
+
 }

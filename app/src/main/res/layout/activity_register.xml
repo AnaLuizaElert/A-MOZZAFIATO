@@ -95,32 +95,29 @@
                 android:hint="@string/category_input_email"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_image_layout"
+        <Button
+            android:id="@+id/register_image_edit"
             style="@style/StyleInput"
             android:layout_width="272dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
 
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
+
             android:layout_marginStart="50dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="355dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="230dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_image_edit"
-                style="@style/StyleTextField"
+            android:backgroundTint="@color/grayInput"
+            android:text="@string/profile_negotiate_images_hint"
+            android:textAlignment="textStart"
+            android:textColor="@color/grayMozzafiato"
+            android:textSize="11sp"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/upload"
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/category_input_image" />
-        </com.google.android.material.textfield.TextInputLayout>
+            tools:ignore="MissingConstraints"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/register_country_layout"
@@ -132,7 +129,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="430dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:layout_constraintBottom_toBottomOf="parent"

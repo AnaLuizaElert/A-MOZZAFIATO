@@ -4,12 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.recaptcha.RecaptchaException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 
-import android.accounts.NetworkErrorException;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +25,6 @@ import android.widget.Toast;
 
 import com.amozzafiato.NavigationPage;
 import com.amozzafiato.R;
-
-import java.io.IOException;
 
 public class Login extends AppCompatActivity {
 
@@ -78,42 +74,42 @@ public class Login extends AppCompatActivity {
             });
 
             linkToHome.setOnClickListener(v -> {
-//                String userEmail = ((TextInputEditText) findViewById(R.id.login_email_edit)).getText().toString();
-//                String userPassword = ((TextInputEditText) findViewById(R.id.login_password_edit)).getText().toString();
-//
-//                try {
-//                    FirebaseAuth mAuth = FirebaseAuth.getInstance();
-//                    mAuth.signInWithEmailAndPassword(userEmail, userPassword)
-//                            .addOnCompleteListener(this, task -> {
-//                                if (task.isSuccessful()) {
-//                                    FirebaseUser user = mAuth.getCurrentUser();
+                String userEmail = ((TextInputEditText) findViewById(R.id.login_email_edit)).getText().toString();
+                String userPassword = ((TextInputEditText) findViewById(R.id.login_password_edit)).getText().toString();
+
+                try {
+                    FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                    mAuth.signInWithEmailAndPassword(userEmail, userPassword)
+                            .addOnCompleteListener(this, task -> {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
 //                                    // A autenticação foi bem-sucedida, você pode redirecionar o usuário para a próxima tela aqui
                                     Intent intent = new Intent(Login.this, NavigationPage.class);
                                     startActivity(intent);
                                     finish();
-//                                } else {
-//                                    // A autenticação falhou, você pode mostrar uma mensagem de erro ao usuário aqui
-//                                    Exception e = task.getException();
-//
-//                                    if (e instanceof FirebaseAuthException) {
-//                                        email.setError("Dados inconsistentes!");
-//                                        password.setError("Dados inconsistentes!");
-//                                    }
-//                                }
-//                            });
-//                } catch (Exception e) {
-//                    if (userEmail.equals("")) {
-//                        email.setError("Preencha este campo!");
-//                    }
-//
-//                    if (userPassword.equals("")) {
-//                        password.setError("Preencha este campo!");
-//                    }
-//
-//                    if (!userEmail.equals("") && !userPassword.equals("")) {
-//                        Toast.makeText(Login.this, "Falha ao fazer login.", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
+                                } else {
+                                    // A autenticação falhou, você pode mostrar uma mensagem de erro ao usuário aqui
+                                    Exception e = task.getException();
+
+                                    if (e instanceof FirebaseAuthException) {
+                                        email.setError("Dados inconsistentes!");
+                                        password.setError("Dados inconsistentes!");
+                                    }
+                                }
+                            });
+                } catch (Exception e) {
+                    if (userEmail.equals("")) {
+                        email.setError("Preencha este campo!");
+                    }
+
+                    if (userPassword.equals("")) {
+                        password.setError("Preencha este campo!");
+                    }
+
+                    if (!userEmail.equals("") && !userPassword.equals("")) {
+                        Toast.makeText(Login.this, "Falha ao fazer login.", Toast.LENGTH_SHORT).show();
+                    }
+                }
             });
         } else {
             LayoutInflater inflater = getLayoutInflater();
