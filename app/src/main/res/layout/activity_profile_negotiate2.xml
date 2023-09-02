@@ -227,7 +227,7 @@
                             app:cardPreventCornerOverlap="false"  >
 
                             <EditText
-                                android:id="@+id/editTextTextMultiLine"
+                                android:id="@+id/profile_negotiate2_input_obs"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:backgroundTint="@color/white"

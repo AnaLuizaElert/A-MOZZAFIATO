@@ -179,7 +179,7 @@
                                 app:cardPreventCornerOverlap="false"  >
 
                                 <EditText
-                                    android:id="@+id/editTextTextMultiLine"
+                                    android:id="@+id/profile_contact_message"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:backgroundTint="@color/white"
@@ -195,6 +195,7 @@
 
 
                             <Button
+                                android:id="@+id/profile_contact_button"
                                 style="@style/StyleButton"
                                 android:layout_width="300dp"
                                 android:layout_height="50dp"

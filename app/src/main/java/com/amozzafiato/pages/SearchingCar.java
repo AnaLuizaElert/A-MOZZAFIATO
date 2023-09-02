@@ -13,6 +13,11 @@ import com.amozzafiato.AdapterSearching;
 import com.amozzafiato.Favorite;
 import com.amozzafiato.R;
 import com.amozzafiato.Searching;
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -33,6 +38,25 @@ public class SearchingCar extends AppCompatActivity {
                 // Modificando o campo de texto de acordo com o parâmetro
                 TextView categoryTextView = findViewById(R.id.searching_car_line_title);
                 categoryTextView.setText("Coleção " + category);
+
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+//                db.collection("TbAuxCarCategory").document(userId).get()
+//                        .addOnSuccessListener(documentSnapshot -> {
+//                            if (documentSnapshot.exists()) {
+//                                inputName.setText(documentSnapshot.getString("name"));
+//                                inputEmail.setText(documentSnapshot.getString("email"));
+//                                inputCountry.setText(documentSnapshot.getString("country"));
+//                                inputPassword.setText(documentSnapshot.getString("password"));
+//                                inputState.setText(documentSnapshot.getString("state"));
+//                                Glide.with(this)
+//                                        .load(documentSnapshot.getString("image"))
+//                                        .into(imageProfile);
+//                            }
+//                        });
+
+
             }
         }
 

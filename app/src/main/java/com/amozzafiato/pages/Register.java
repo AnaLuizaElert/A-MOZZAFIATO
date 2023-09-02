@@ -146,8 +146,11 @@ public class Register extends AppCompatActivity {
             ) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        Map<String, Object> userMap = new HashMap<>();
+
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         StorageReference imageRef = storageRef.child("images/" + selectedImageUri.getLastPathSegment());
+
         imageRef.putFile(selectedImageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -156,6 +159,31 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 idImage = uri.toString();
+
+                                // Agora que você tem a URL da imagem, atualize o userMap e salve os dados no Firestore
+                                Map<String, Object> userMap = new HashMap<>();
+                                userMap.put("name", name);
+                                userMap.put("country", country);
+                                userMap.put("state", state);
+                                userMap.put("image", idImage);
+                                userMap.put("email", email);
+                                userMap.put("password", password);
+
+                                // Adicione os dados ao Firestore
+                                db.collection("TbUser").document(userId) // Use o ID do usuário como ID do documento
+                                        .set(userMap)
+                                        .addOnSuccessListener(aVoid -> {
+                                            // Dados salvos com sucesso
+                                            Intent intent = new Intent(Register.this, NavigationPage.class);
+                                            startActivity(intent);
+                                            finish();
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Ocorreu um erro ao salvar os dados no Firestore
+                                            }
+                                        });
                             }
                         });
                     }
@@ -163,26 +191,11 @@ public class Register extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        // Ocorreu um erro ao fazer o upload da imagem
                     }
                 });
 
-        Map<String, Object> userMap = new HashMap<>();
-        userMap.put("name", name);
-        userMap.put("country", country);
-        userMap.put("state", state);
-        userMap.put("image", idImage);
-        userMap.put("email", email);
-        userMap.put("password", password);
 
-        // Adicione os dados ao Firestore
-        db.collection("TbUser").document(userId) // Use o ID do usuário como ID do documento
-                .set(userMap)
-                .addOnSuccessListener(aVoid -> {
-                    // Dados salvos com sucesso
-                    Intent intent = new Intent(Register.this, NavigationPage.class);
-                    startActivity(intent);
-                    finish();
-                });
     }
 
     private void openGallery() {
@@ -203,8 +216,7 @@ public class Register extends AppCompatActivity {
                 && data != null
                 && data.getData() != null) {
 
-            this.selectedImageUri = data.getData();
-
+            selectedImageUri = data.getData();
         }
 
 

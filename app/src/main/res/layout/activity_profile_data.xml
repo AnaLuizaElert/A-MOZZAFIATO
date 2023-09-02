@@ -31,66 +31,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="380dp"
-                android:layout_height="110dp"
-                app:cardElevation="10dp"
-                app:cardPreventCornerOverlap="false"
-                app:cardCornerRadius="25dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="-20dp"
 
-                android:backgroundTint="@color/grayMozzafiato">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingStart="35dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/circularImageView"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:src="@drawable/profile_image"
-                        android:layout_gravity="center"
-                        app:civ_border_color="@color/lightGray" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:paddingStart="20dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/forumregular"
-                            android:textSize="30sp"
-                            android:textAlignment="textStart"
-                            android:text="@string/category_input_name"
-                            android:textColor="@color/white">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/forumregular"
-                            android:textSize="18sp"
-                            android:textAlignment="textStart"
-                            android:text="@string/category_input_state"
-                            android:textColor="@color/white">
-
-                        </TextView>
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="380dp"
@@ -197,36 +138,12 @@
                             android:textAlignment="textStart"
                             android:textSize="16sp"/>
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
-                            app:cardCornerRadius="25dp"
-                            app:cardElevation="10dp"
-                            app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_image"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
+                        <ImageView
+                            android:id="@+id/profile_data_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_image"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="298dp"
-                                    android:layout_height="40dp"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:text="@string/category_input_image"
-                                    android:textAlignment="gravity"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-                            </androidx.cardview.widget.CardView>
-                        </androidx.cardview.widget.CardView>
+                        </ImageView>
 
                         <TextView
                             android:layout_width="match_parent"

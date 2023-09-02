@@ -1,5 +1,6 @@
 package com.amozzafiato.pages.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -16,14 +17,18 @@ import com.amozzafiato.R;
 import com.amozzafiato.pages.profile.ProfileData;
 import com.amozzafiato.pages.profile.ProfileFavorites;
 import com.amozzafiato.pages.profile.ProfileNegotiate;
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private TextView userState, userName;
+    private CircleImageView profile;
     private String mParam1;
     private String mParam2;
 
@@ -50,6 +55,7 @@ public class Profile extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,6 +69,7 @@ public class Profile extends Fragment {
 
         userState = view.findViewById(R.id.profile_state_user);
         userName = view.findViewById(R.id.profile_name_user);
+        profile = view.findViewById(R.id.profile_image);
 
 
         linkContact.setOnClickListener(v -> {
@@ -94,6 +101,9 @@ public class Profile extends Fragment {
                     if (documentSnapshot.exists()) {
                         userName.setText(documentSnapshot.getString("name"));
                         userState.setText(documentSnapshot.getString("state"));
+                        Glide.with(this)
+                                .load(documentSnapshot.getString("image"))
+                                .into(profile);
                     }
                 }
         );

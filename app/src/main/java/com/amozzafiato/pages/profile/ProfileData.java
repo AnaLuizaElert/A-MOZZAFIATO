@@ -11,13 +11,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.amozzafiato.R;
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileData extends AppCompatActivity {
 
-    private EditText inputName, inputEmail, inputPassword, inputCountry, inputState, inputImage;
+    private EditText inputName, inputEmail, inputPassword, inputCountry, inputState;
+    private ImageView imageProfile;
     private CardView cardName, cardEmail, cardPassword, cardCountry, cardState, cardImage;
     private Button editButton;
     private boolean isEditing = false;
@@ -28,11 +36,11 @@ public class ProfileData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_data);
 
+        imageProfile = findViewById(R.id.profile_data_image);
         inputName = findViewById(R.id.profile_data_input_name);
         inputEmail = findViewById(R.id.profile_data_input_email);
         inputCountry = findViewById(R.id.profile_data_input_country);
         inputState = findViewById(R.id.profile_data_input_state);
-        inputImage = findViewById(R.id.profile_data_input_image);
         inputPassword = findViewById(R.id.profile_data_input_password);
 
         cardName = findViewById(R.id.profile_data_card_name);
@@ -40,7 +48,6 @@ public class ProfileData extends AppCompatActivity {
         cardPassword = findViewById(R.id.profile_data_card_password);
         cardCountry = findViewById(R.id.profile_data_card_country);
         cardState = findViewById(R.id.profile_data_card_state);
-        cardImage = findViewById(R.id.profile_data_card_image);
 
         editButton = findViewById(R.id.profile_data_button_edit);
 
@@ -63,9 +70,16 @@ public class ProfileData extends AppCompatActivity {
                         inputCountry.setText(documentSnapshot.getString("country"));
                         inputPassword.setText(documentSnapshot.getString("password"));
                         inputState.setText(documentSnapshot.getString("state"));
-                        inputImage.setText(documentSnapshot.getString("urlImage"));
+                        Glide.with(this)
+                                .load(documentSnapshot.getString("image"))
+                                .into(imageProfile);
                     }
                 });
+
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference imageRef = storageRef.child("images/");
+
+
 
         // Set OnClickListener for the edit image
         editInfo.setOnClickListener(v ->  {
@@ -76,7 +90,6 @@ public class ProfileData extends AppCompatActivity {
                     inputPassword.setEnabled(true);
                     inputCountry.setEnabled(true);
                     inputState.setEnabled(true);
-                    inputImage.setEnabled(true);
 
                     // Show the edit button
                     editButton.setVisibility(View.VISIBLE);
@@ -109,12 +122,6 @@ public class ProfileData extends AppCompatActivity {
                     inputState.setTextColor(getResources().getColor(android.R.color.black));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                         cardState.setCardBackgroundColor(getColor(R.color.grayInput));
-                    }
-
-                    inputImage.setEnabled(false);
-                    inputImage.setTextColor(getResources().getColor(android.R.color.black));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        cardImage.setCardBackgroundColor(getColor(R.color.grayInput));
                     }
 
                     // Hide the edit button
