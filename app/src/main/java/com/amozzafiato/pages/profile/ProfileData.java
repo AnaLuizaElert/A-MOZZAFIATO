@@ -152,14 +152,34 @@ public class ProfileData extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(getApplicationContext(), "Pode demorar um pouquinho para atualizar :)", Toast.LENGTH_SHORT).show();
-                            isEditing = false;
-                            changeEditStateFalse();
-
-                            thisUser.updateEmail(newEmail);
-
-                            thisUser.updatePassword(newPassword);
-
+                            thisUser.updateEmail(newEmail)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            thisUser.updatePassword(newPassword)
+                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            // Ambas as atualizações foram bem-sucedidas
+                                                            Toast.makeText(getApplicationContext(), "Pode demorar um pouquinho para atualizar :)", Toast.LENGTH_SHORT).show();
+                                                            isEditing = false;
+                                                            changeEditStateFalse();
+                                                        }
+                                                    })
+                                                    .addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            Toast.makeText(getApplicationContext(), "Erro ao atualizar a senha", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    });
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(getApplicationContext(), "Erro ao atualizar o email", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
