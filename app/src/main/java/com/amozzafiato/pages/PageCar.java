@@ -1,25 +1,28 @@
 package com.amozzafiato.pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.amozzafiato.R;
 import com.bumptech.glide.Glide;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class PageCar extends AppCompatActivity {
 
+    private static Integer carId;
     private TextView
-            nameCar, year, traction, qtyDoors, price, maxSpeed, exchanger, km, fuel, engine, cv, brand, linkToSeeMoreImages, linkToInterestForm;
+            nameCar, year, traction, qtyDoors, price, maxSpeed, exchanger, km, fuel, engine, cv, brand, category, linkToSeeMoreImages, linkToInterestForm;
     private ImageView mainPhoto, image1, image2, image3;
     private Integer cont = 0;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,7 @@ public class PageCar extends AppCompatActivity {
         engine = findViewById(R.id.page_car_engine);
         cv = findViewById(R.id.page_car_horse_power);
         brand = findViewById(R.id.page_car_brand);
+        category = findViewById(R.id.page_car_category);
 
         image1 = findViewById(R.id.page_car_secondary_image_1);
         image2 = findViewById(R.id.page_car_secondary_image_2);
@@ -60,46 +64,59 @@ public class PageCar extends AppCompatActivity {
 
         /*Buscar dados do carro no firebase*/
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String carName;
+        Intent intent = getIntent();
+        if (intent != null) {
+            carName = intent.getStringExtra("carName");
+        } else {
+            carName = "";
+        }
 
-        db.collection("TbCar").document("1").get()
+        db.collection("TbCar").get()
                 .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        Integer yearConvert = documentSnapshot.getDouble("year").intValue();
-                        Integer qtyDoorsConvert = documentSnapshot.getDouble("qtyDoors").intValue();
-                        Integer maxSpeedConvert = documentSnapshot.getDouble("maxSpeed").intValue();
-                        Integer kmConvert = documentSnapshot.getDouble("km").intValue();
-                        Integer cvConvert = documentSnapshot.getDouble("cv").intValue();
+                    for (DocumentSnapshot document : documentSnapshot) {
+                        if (document.get("name").equals(carName)) {
 
-                        year.setText(yearConvert.toString());
-                        qtyDoors.setText(qtyDoorsConvert.toString());
-                        maxSpeed.setText(maxSpeedConvert.toString());
-                        km.setText(kmConvert.toString());
-                        cv.setText(cvConvert.toString());
+                            carId = Integer.valueOf(document.getId());
 
-                        price.setText(documentSnapshot.getDouble("price").toString());
+                            Integer yearConvert = document.getDouble("year").intValue();
+                            Integer qtyDoorsConvert = document.getDouble("qtyDoors").intValue();
+                            Integer maxSpeedConvert = document.getDouble("maxSpeed").intValue();
+                            Integer kmConvert = document.getDouble("km").intValue();
+                            Integer cvConvert = document.getDouble("cv").intValue();
 
-                        nameCar.setText(documentSnapshot.getString("name"));
-                        traction.setText(documentSnapshot.getString("traction"));
-                        fuel.setText(documentSnapshot.getString("fuel"));
-                        engine.setText(documentSnapshot.getString("engine"));
-                        brand.setText(documentSnapshot.getString("brand"));
+                            year.setText(yearConvert.toString());
+                            qtyDoors.setText(qtyDoorsConvert.toString());
+                            maxSpeed.setText(maxSpeedConvert.toString());
+                            km.setText(kmConvert.toString());
+                            cv.setText(cvConvert.toString());
 
-                        if (documentSnapshot.getBoolean("manual")) {
-                            exchanger.setText("manual");
-                        } else {
-                            exchanger.setText("automático");
+                            price.setText(document.getDouble("price").toString());
+
+                            nameCar.setText(document.getString("name"));
+                            traction.setText(document.getString("traction"));
+                            fuel.setText(document.getString("fuel"));
+                            engine.setText(document.getString("engine"));
+                            brand.setText(document.getString("brand"));
+                            category.setText(document.getString("category"));
+
+                            if (Boolean.TRUE.equals(document.getBoolean("manual"))) {
+                                exchanger.setText("manual");
+                            } else {
+                                exchanger.setText("automático");
+                            }
+
+                            // Carrega a imagem da URL usando o Glide
+                            Glide.with(this)
+                                    .load(document.getString("mainPhoto"))
+                                    .into(mainPhoto);
                         }
-
-                        // Carrega a imagem da URL usando o Glide
-                        Glide.with(this)
-                                .load(documentSnapshot.getString("mainPhoto"))
-                                .into(mainPhoto);
                     }
                 });
 
         // Execute a consulta para buscar documentos na coleção "TbImages" com base no carId
         db.collection("TbImages")
-                .whereEqualTo("idCar", 1)
+                .whereEqualTo("idCar", carId)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {

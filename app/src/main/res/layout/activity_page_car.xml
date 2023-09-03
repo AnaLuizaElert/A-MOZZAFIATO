@@ -264,7 +264,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
-                            android:text="@string/page_car_loading"
+                            android:text="@string/page_car_km"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 

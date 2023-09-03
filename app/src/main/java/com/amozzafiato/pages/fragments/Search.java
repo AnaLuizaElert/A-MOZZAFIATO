@@ -3,22 +3,15 @@ package com.amozzafiato.pages.fragments;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import androidx.fragment.app.Fragment;
+
 import com.amozzafiato.R;
-import com.amozzafiato.Searching;
 import com.amozzafiato.pages.SearchingCar;
-import com.amozzafiato.pages.profile.ProfileContact;
-import com.amozzafiato.pages.profile.ProfileData;
-import com.amozzafiato.pages.profile.ProfileFavorites;
-import com.amozzafiato.pages.profile.ProfileNegotiate;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,49 +79,46 @@ public class Search extends Fragment {
         european.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
             // Passando o parâmetro para a próxima página
-            intent.putExtra("category", "europeu");
+            intent.putExtra("category", "Europeu");
             startActivity(intent);
         });
 
-        american.setOnClickListener(v ->  {
+        american.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "american");
+            intent.putExtra("category", "Americano");
             startActivity(intent);
         });
 
-        convertible.setOnClickListener(v ->  {
+        convertible.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "conversível");
+            intent.putExtra("category", "Conversível");
             startActivity(intent);
         });
 
-        coupe.setOnClickListener(v ->  {
+        coupe.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "coupe");
+            intent.putExtra("category", "Coupé");
             startActivity(intent);
         });
 
-        hot.setOnClickListener(v ->  {
+        hot.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "hot");
+            intent.putExtra("category", "Hot Rod");
             startActivity(intent);
         });
 
-        pickup.setOnClickListener(v ->  {
+        pickup.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "pickup");
+            intent.putExtra("category", "Picape");
             startActivity(intent);
         });
 
-        national.setOnClickListener(v ->  {
+        national.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "nacional");
+            intent.putExtra("category", "Nacional");
             startActivity(intent);
         });
 
-
-        // Inflate the layout for this fragment
         return view;
-
     }
 }
