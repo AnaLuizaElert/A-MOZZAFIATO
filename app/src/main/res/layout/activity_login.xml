@@ -84,6 +84,9 @@
             android:layout_marginTop="380dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
+
+            app:endIconMode="password_toggle"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -92,10 +95,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password_edit"
                 style="@style/StyleTextField"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/category_input_password" />
+
+                android:hint="@string/category_input_password"
+                android:inputType="text|textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView

@@ -302,7 +302,7 @@
                                     android:ems="10"
                                     android:enabled="false"
                                     android:inputType="textPassword"
-                                    android:text="@string/profile_data_password"
+                                    android:text="@string/category_input_password"
                                     android:textSize="18sp"
                                     tools:ignore="TouchTargetSizeCheck" />
                             </androidx.cardview.widget.CardView>
