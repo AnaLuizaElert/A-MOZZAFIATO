@@ -1,9 +1,6 @@
 package com.amozzafiato;
 
-import java.util.ArrayList;
-
 public class Favorite {
-    public static ArrayList<Favorite> listFavorite = new ArrayList<>();
     private String nameCar;
     private String image;
 
