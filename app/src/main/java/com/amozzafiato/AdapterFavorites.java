@@ -1,10 +1,16 @@
 package com.amozzafiato;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.amozzafiato.pages.PageCar;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -24,10 +30,35 @@ public class AdapterFavorites extends RecyclerView.Adapter<ViewHolderFavorites> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolderFavorites holder, int position) {
+    public void onBindViewHolder(ViewHolderFavorites holder, @SuppressLint("RecyclerView") int position) {
         Favorite item = itemList.get(position);
+        Glide.with(holder.itemView.getContext())
+                .load(item.getImage())
+                .into(holder.image);
         holder.name.setText(item.getNameCar());
-        holder.image.setImageResource(item.getImage());
+
+
+        holder.itemView.setOnClickListener(v -> {
+            // Obtém o carro clicado com base na posição
+            Favorite clickedCar = itemList.get(position);
+
+            // Obtém o contexto diretamente da visualização clicada
+            Context context = holder.itemView.getContext();
+
+            // Inicia a atividade PageCar e envia dados para ela
+            Intent intent = new Intent(context, PageCar.class);
+            intent.putExtra("carName", clickedCar.getNameCar());
+
+            context.startActivity(intent);
+        });
+    }
+
+    // Método para atualizar a lista de itens
+    @SuppressLint("NotifyDataSetChanged")
+    public void updateItems(ArrayList<Favorite> newItems) {
+        itemList.clear();
+        itemList.addAll(newItems);
+        notifyDataSetChanged();
     }
 
     @Override

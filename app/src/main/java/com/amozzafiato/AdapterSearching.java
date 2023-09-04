@@ -39,21 +39,18 @@ public class AdapterSearching extends RecyclerView.Adapter<ViewHolderSearching> 
         holder.price.setText(item.getPrice());
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Obtém o carro clicado com base na posição
-                Searching clickedCar = itemList.get(position);
+        holder.itemView.setOnClickListener(v -> {
+            // Obtém o carro clicado com base na posição
+            Searching clickedCar = itemList.get(position);
 
-                // Obtém o contexto diretamente da visualização clicada
-                Context context = holder.itemView.getContext();
+            // Obtém o contexto diretamente da visualização clicada
+            Context context = holder.itemView.getContext();
 
-                // Inicia a atividade PageCar e envia dados para ela
-                Intent intent = new Intent(context, PageCar.class);
-                intent.putExtra("carName", clickedCar.getName());
+            // Inicia a atividade PageCar e envia dados para ela
+            Intent intent = new Intent(context, PageCar.class);
+            intent.putExtra("carName", clickedCar.getName());
 
-                context.startActivity(intent);
-            }
+            context.startActivity(intent);
         });
 
 

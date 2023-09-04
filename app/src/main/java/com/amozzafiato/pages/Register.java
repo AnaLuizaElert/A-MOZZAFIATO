@@ -1,8 +1,5 @@
 package com.amozzafiato.pages;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +8,9 @@ import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.NavigationPage;
 import com.amozzafiato.R;
@@ -31,12 +31,12 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
 
-    private TextInputEditText name, country, state, image, email, password, confpassword;
-    private TextView linkToLogin;
-    private Button buttonChooseImage, register;
     private static final int PICK_IMAGE_REQUEST = 1;
     private static Uri selectedImageUri;
     private static String idImage;
+    private TextInputEditText name, country, state, image, email, password, confpassword;
+    private TextView linkToLogin;
+    private Button buttonChooseImage, register;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -99,7 +99,7 @@ public class Register extends AppCompatActivity {
                 isValid = false;
             }
 
-            if(!confpassword.getText().toString().equals(password.getText().toString())){
+            if (!confpassword.getText().toString().equals(password.getText().toString())) {
                 password.setError("Senhas diferentes!");
                 confpassword.setError("Senhas diferentes!");
                 isValid = false;
@@ -135,7 +135,6 @@ public class Register extends AppCompatActivity {
                                 }
                             }
                         });
-
             }
 
         });
@@ -143,7 +142,7 @@ public class Register extends AppCompatActivity {
 
     private void saveUserDataToFirestore(
             String userId, String name, String country, String state, String email, String password
-            ) {
+    ) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Map<String, Object> userMap = new HashMap<>();
