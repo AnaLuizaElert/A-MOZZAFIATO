@@ -22,6 +22,7 @@ import de.cketti.mailto.EmailIntentBuilder;
 public class PageCar extends AppCompatActivity {
 
     private static Integer carId;
+    private static String nameCarIntent;
     private TextView
             nameCar, year, traction, qtyDoors, price, maxSpeed, exchanger, km, fuel, engine, cv, brand, category, linkToSeeMoreImages, linkToInterestForm;
     private ImageView mainPhoto, image1, image2, image3, linkComeBack;
@@ -61,7 +62,9 @@ public class PageCar extends AppCompatActivity {
 
         linkToSeeMoreImages.setOnClickListener(v -> {
             Intent intentLink = new Intent(PageCar.this, PageCarImages.class);
-            intentLink.putExtra("chaveAtributo", 1);
+            generateData();
+            intentLink.putExtra("chaveAtributo", carId);
+            intentLink.putExtra("nameCar", nameCarIntent);
             startActivity(intentLink);
         });
 
@@ -113,6 +116,7 @@ public class PageCar extends AppCompatActivity {
                             brand.setText(document.getString("brand"));
                             category.setText(document.getString("category"));
                             nameCar.setText(document.getString("name"));
+                            nameCarIntent = document.getString("name");
 
                             if (Boolean.TRUE.equals(document.getBoolean("manual"))) {
                                 exchanger.setText("manual");

@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/forumregular"
                 android:gravity="center_vertical|end"
-                android:text="Nissan R34 Skyline GT-R"
+                android:text="@string/page_car_name"
                 android:textSize="20sp" />
 
         </LinearLayout>

@@ -1,11 +1,12 @@
 package com.amozzafiato.pages;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.R;
 import com.bumptech.glide.Glide;
@@ -24,11 +25,14 @@ public class PageCarImages extends AppCompatActivity {
         ImageView linkToInterestForm = findViewById(R.id.page_car_arrow_back);
 
         Intent intent = getIntent();
-        String idCarro = intent.getStringExtra("chaveAtributo");
+        Integer idCar = intent.getIntExtra("chaveAtributo", -1);
+        String nameCar = intent.getStringExtra("nameCar");
+
+        TextView inputNameCar = findViewById(R.id.page_car_name);
+        inputNameCar.setText(nameCar);
 
         linkToInterestForm.setOnClickListener(v -> {
-            Intent intentform = new Intent(PageCarImages.this, PageCar.class);
-            startActivity(intentform);
+            onBackPressed();
         });
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -36,7 +40,7 @@ public class PageCarImages extends AppCompatActivity {
 
         // Execute a consulta para buscar documentos na coleção "TbImages" com base no carId
         db.collection("TbImages")
-                .whereEqualTo("idCar", 1)
+                .whereEqualTo("idCar", idCar)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     for (QueryDocumentSnapshot documentSnapshot : querySnapshot) {
