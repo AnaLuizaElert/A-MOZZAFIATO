@@ -23,7 +23,7 @@ public class CarViewModel extends ViewModel {
                 .addOnSuccessListener(documentSnapshot -> {
                     carsList.clear();
                     for (DocumentSnapshot document : documentSnapshot) {
-                        if (document.get("category").equals(category)) {
+                        if (document.get("category").equals(category) || category.equals("TODOS")) {
                             String price = "R$ " + document.getDouble("price");
                             carsList.add(new Searching(document.getString("mainPhoto"), document.getString("name"), price));
                         }

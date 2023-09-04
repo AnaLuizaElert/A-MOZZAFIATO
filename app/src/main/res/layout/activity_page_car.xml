@@ -52,6 +52,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/page_car_come_back"
                         android:layout_width="10dp"
                         android:layout_height="40dp"
                         android:layout_gravity="start|center_vertical"

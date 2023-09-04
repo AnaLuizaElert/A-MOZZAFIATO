@@ -32,7 +32,11 @@ public class SearchingCar extends AppCompatActivity {
             String category = intent.getStringExtra("category");
             if (category != null) {
                 TextView categoryTextView = findViewById(R.id.searching_car_line_title);
-                categoryTextView.setText("Coleção " + category);
+                if (category.equals("TODOS")) {
+                    categoryTextView.setText("Nossa Coleção ");
+                } else {
+                    categoryTextView.setText("Coleção " + category);
+                }
 
                 recyclerView = findViewById(R.id.recyclerView);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -46,13 +50,8 @@ public class SearchingCar extends AppCompatActivity {
                     adapter.updateItems(cars);
                 });
 
-
                 carViewModel.loadCars(category);
-//                String isAll = intent.getStringExtra("isAll");
-//                if(isAll.isEmpty()){
-//                } else {
-//
-//                }
+
             }
         }
 

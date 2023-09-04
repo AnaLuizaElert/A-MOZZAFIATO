@@ -17,7 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.amozzafiato.R;
-import com.amozzafiato.pages.PageCar;
+import com.amozzafiato.pages.SearchingCar;
 
 public class Home extends Fragment {
 
@@ -45,8 +45,8 @@ public class Home extends Fragment {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button colection = view.findViewById(R.id.fragment_home_button_see_collection);
 
         colection.setOnClickListener(v -> {
-            /*TODO: mudar para searchCar.class*/
-            Intent intent = new Intent(getActivity(), PageCar.class);
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "TODOS");
             startActivity(intent);
         });
 
