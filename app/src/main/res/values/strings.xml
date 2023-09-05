@@ -10,7 +10,7 @@
 
     <string name="title_register">Cadastrar</string>
     <string name="category_input_image">Sua foto</string>
-    <string name="category_input_country">Pais</string>
+    <string name="category_input_country">País</string>
     <string name="category_input_state">Estado</string>
     <string name="category_input_name">Nome</string>
     <string name="category_input_email">Email</string>

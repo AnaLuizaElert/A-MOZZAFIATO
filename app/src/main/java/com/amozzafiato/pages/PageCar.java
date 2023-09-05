@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.R;
-import com.amozzafiato.pages.profile.ProfileFavorites;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,7 +30,7 @@ public class PageCar extends AppCompatActivity {
     private static String nameCarIntent;
     private TextView
             nameCar, year, traction, qtyDoors, price, maxSpeed, exchanger, km, fuel, engine, cv, brand, category, linkToSeeMoreImages, linkToInterestForm;
-    private ImageView mainPhoto, image1, image2, image3, linkComeBack, favorite;
+    private ImageView mainPhoto, image1, image2, image3, linkComeBack;
     private Integer cont = 0;
 
     @SuppressLint({"SetTextI18n", "MissingInflatedId"})
@@ -64,8 +63,6 @@ public class PageCar extends AppCompatActivity {
         image2 = findViewById(R.id.page_car_secondary_image_2);
         image3 = findViewById(R.id.page_car_secondary_image_3);
 
-        favorite = findViewById(R.id.page_car_favorite);
-
         generateData();
 
         linkToSeeMoreImages.setOnClickListener(v -> {
@@ -82,37 +79,6 @@ public class PageCar extends AppCompatActivity {
 
         linkComeBack.setOnClickListener(v -> {
             onBackPressed();
-        });
-
-        favorite.setOnClickListener(v -> {
-            generateData();
-
-            FirebaseAuth mAuth = FirebaseAuth.getInstance();
-            FirebaseUser thisUser = mAuth.getCurrentUser();
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-            String userId = thisUser.getUid();
-
-
-            db.collection("TbFavorites")
-                    .whereEqualTo("idUser", userId)
-                    .whereEqualTo("idCar", carId)
-                    .get()
-                    .addOnSuccessListener(querySnapshot -> {
-                        if (!querySnapshot.isEmpty()) {
-                            // O item já existe, exclua-o
-                            for (DocumentSnapshot document : querySnapshot) {
-                                db.collection("TbFavorites")
-                                        .document(document.getId())
-                                        .delete();
-                            }
-                        } else {
-                            addNewFavorite(userId, carId);
-                        }
-                    })
-                    .addOnFailureListener(e -> {
-                        // Erro ao consultar o Firestore
-                    });
         });
 
     }
@@ -223,23 +189,4 @@ public class PageCar extends AppCompatActivity {
         dialog.show();
     }
 
-    private void addNewFavorite(String userId, Integer carId) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Map<String, Object> favoriteMap = new HashMap<>();
-        favoriteMap.put("idUser", userId);
-        favoriteMap.put("idCar", carId);
-
-        db.collection("TbFavorites")
-                .add(favoriteMap)
-                .addOnSuccessListener(documentReference -> {
-                    // Novo favorito adicionado com sucesso
-                    Intent intent = new Intent(PageCar.this, ProfileFavorites.class);
-                    startActivity(intent);
-                    finish();
-                })
-                .addOnFailureListener(e -> {
-                    // Erro ao adicionar o novo favorito
-                });
-    }
 }

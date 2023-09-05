@@ -39,12 +39,14 @@
             android:layout_marginTop="20dp"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp"
+            android:backgroundTint="@color/white"
             app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,6 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:paddingRight="20dp"
                         android:fontFamily="@font/forumregular"
                         android:gravity="center_vertical|end"
                         android:text="@string/page_car_name"
@@ -167,17 +170,9 @@
                     android:layout_height="100dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/page_car_favorite"
-                        android:layout_width="50dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/coracao" />
-
                     <Button
                         android:id="@+id/page_car_button_interested"
-                        android:layout_width="280dp"
+                        android:layout_width="320dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="30dp"
@@ -192,7 +187,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+                    android:layout_height="520dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_border"
                     android:backgroundTint="#B6C8CF"

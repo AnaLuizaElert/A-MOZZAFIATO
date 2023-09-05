@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.amozzafiato.pages.profile.ProfileContact;
 import com.amozzafiato.R;
 import com.amozzafiato.pages.profile.ProfileData;
-import com.amozzafiato.pages.profile.ProfileFavorites;
 import com.amozzafiato.pages.profile.ProfileNegotiate;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,7 +64,6 @@ public class Profile extends Fragment {
         CardView linkContact = view.findViewById(R.id.link_contact_profile);
         CardView linkData = view.findViewById(R.id.link_data_profile);
         CardView linkNegotiate = view.findViewById(R.id.link_data_negotiate);
-        CardView linkFavorites = view.findViewById(R.id.link_data_favorites);
 
         userState = view.findViewById(R.id.profile_state_user);
         userName = view.findViewById(R.id.profile_name_user);
@@ -84,11 +82,6 @@ public class Profile extends Fragment {
 
         linkNegotiate.setOnClickListener(v ->  {
             Intent intent = new Intent(getActivity(), ProfileNegotiate.class);
-            startActivity(intent);
-        });
-
-        linkFavorites.setOnClickListener(v ->  {
-            Intent intent = new Intent(getActivity(), ProfileFavorites.class);
             startActivity(intent);
         });
 

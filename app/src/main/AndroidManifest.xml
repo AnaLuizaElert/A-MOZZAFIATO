@@ -28,13 +28,6 @@
             android:name=".pages.SearchingCar"
             android:exported="false" />
         <activity
-            android:name=".pages.profile.ProfileFavorites"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".pages.profile.ProfileNegotiate2"
             android:exported="false">
             <meta-data

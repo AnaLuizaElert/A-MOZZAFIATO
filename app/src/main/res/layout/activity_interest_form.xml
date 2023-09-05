@@ -43,6 +43,7 @@
                 android:fontFamily="@font/forumregular"
                 android:gravity="start"
                 android:inputType="textMultiLine"
+                android:padding="20dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:typeface="normal"

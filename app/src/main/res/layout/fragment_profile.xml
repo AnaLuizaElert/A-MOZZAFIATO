@@ -34,7 +34,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="70dp"
                 android:orientation="vertical"
                 android:textAlignment="center">
 
@@ -124,29 +124,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/link_data_favorites"
-                    android:layout_width="180dp"
-                    android:layout_height="60dp"
-                    app:cardElevation="10dp"
-                    app:cardPreventCornerOverlap="false"
-                    app:cardCornerRadius="20dp"
-                    android:layout_marginStart="-20dp"
-                    android:layout_marginTop="20dp"
-                    android:backgroundTint="@color/grayMozzafiato">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/forumregular"
-                        android:textSize="25sp"
-                        android:textAlignment="center"
-                        android:text="@string/profile_card_favorite"
-                        android:textColor="@color/white">
-                    </TextView>
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/link_data_negotiate"
