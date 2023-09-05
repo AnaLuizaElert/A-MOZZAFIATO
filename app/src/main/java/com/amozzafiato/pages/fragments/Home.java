@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Space;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,14 +20,20 @@ import androidx.fragment.app.Fragment;
 
 import com.amozzafiato.R;
 import com.amozzafiato.pages.SearchingCar;
+import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Home extends Fragment {
 
     private Space emptySpace;
     private ScrollView scrollView;
-    private int originalSpaceHeight;
-    private Button seeCollectionButton;
+    private int originalSpaceHeight, count;
+    private Button seeCollectionButton, colection;
+    private TextView nameCar, price;
+    private ImageView mainPhoto;
 
+    @SuppressLint({"CutPasteId", "MissingInflatedId", "SetTextI18n"})
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -41,8 +49,7 @@ public class Home extends Fragment {
         // Rolando para o topo da página
         scrollView.post(() -> scrollView.scrollTo(0, 0));
 
-
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button colection = view.findViewById(R.id.fragment_home_button_see_collection);
+        colection = view.findViewById(R.id.fragment_home_button_see_collection);
 
         colection.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
@@ -72,6 +79,52 @@ public class Home extends Fragment {
                 emptySpace.setLayoutParams(layoutParams);
             }
         });
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("TbCar")
+                .get()
+                .addOnSuccessListener(querySnapshot -> {
+                    for (DocumentSnapshot documentSnapshot : querySnapshot) {
+                        count++;
+                        if (count == 1) {
+                            nameCar = view.findViewById(R.id.home_first_name_car);
+                            mainPhoto = view.findViewById(R.id.home_first_image_car);
+                            price = view.findViewById(R.id.home_first_price_car);
+
+                            nameCar.setText(documentSnapshot.getString("name"));
+                            price.setText("R$ " + documentSnapshot.getDouble("price"));
+                            Glide.with(this)
+                                    .load(documentSnapshot.getString("mainPhoto"))
+                                    .into(mainPhoto);
+                        } else if (count == 2) {
+
+                            nameCar = view.findViewById(R.id.home_second_name_car);
+                            mainPhoto = view.findViewById(R.id.home_second_image_car);
+                            price = view.findViewById(R.id.home_second_price_car);
+
+                            nameCar.setText(documentSnapshot.getString("name"));
+                            price.setText("R$ " + documentSnapshot.getDouble("price"));
+                            Glide.with(this)
+                                    .load(documentSnapshot.getString("mainPhoto"))
+                                    .into(mainPhoto);
+                        } else if (count == 3) {
+
+                            nameCar = view.findViewById(R.id.home_third_name_car);
+                            mainPhoto = view.findViewById(R.id.home_third_image_car);
+                            price = view.findViewById(R.id.home_third_price_car);
+
+                            nameCar.setText(documentSnapshot.getString("name"));
+                            price.setText("R$ " + documentSnapshot.getDouble("price"));
+                            Glide.with(this)
+                                    .load(documentSnapshot.getString("mainPhoto"))
+                                    .into(mainPhoto);
+                        }
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Erro ao adicionar o novo favorito
+                });
 
         return view;
     }

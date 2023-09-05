@@ -20,6 +20,7 @@
         android:fontFamily="@font/forumregular"
         android:gravity="center"
         android:text="@string/profile_negotiate_name_car"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <ImageView

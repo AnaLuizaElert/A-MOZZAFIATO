@@ -28,8 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:backgroundTint="@color/white"
         android:background="@drawable/rounded_border"
+        android:backgroundTint="@color/white"
         android:padding="20dp">
 
         <LinearLayout
@@ -106,28 +106,30 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/home_first_image_car"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/carro"
-                            android:visibility="visible" />
+                            android:src="@drawable/profile_image" />
 
                         <TextView
+                            android:id="@+id/home_first_name_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
-                            android:text="Nissan R34 Skyline GT-R"
+                            android:text="@string/page_car_name"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
                         <TextView
+                            android:id="@+id/home_first_price_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
-                            android:text="R$ 155 MIL"
+                            android:text="@string/page_car_price"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
@@ -147,29 +149,31 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/home_second_image_car"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/carro"
-                            android:visibility="visible" />
+                            android:src="@drawable/profile_image" />
 
                         <TextView
+                            android:id="@+id/home_second_name_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
+                            android:text="@string/page_car_name"
                             android:textColor="@color/black"
-                            android:text="Nissan R34 Skyline GT-R"
                             android:textSize="20sp" />
 
                         <TextView
+                            android:id="@+id/home_second_price_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
+                            android:text="@string/page_car_price"
                             android:textColor="@color/black"
-                            android:text="R$ 155 MIL"
                             android:textSize="20sp" />
 
                     </LinearLayout>
@@ -186,31 +190,33 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-                        
+
                         <ImageView
+                            android:id="@+id/home_third_image_car"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/carro"
-                            android:visibility="visible" />
+                            android:src="@drawable/profile_image" />
 
                         <TextView
+                            android:id="@+id/home_third_name_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
+                            android:text="@string/page_car_name"
                             android:textColor="@color/black"
-                            android:text="Nissan R34 Skyline GT-R"
                             android:textSize="20sp" />
 
                         <TextView
+                            android:id="@+id/home_third_price_car"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical|end"
+                            android:text="@string/page_car_price"
                             android:textColor="@color/black"
-                            android:text="R$ 155 MIL"
                             android:textSize="20sp" />
 
                     </LinearLayout>
@@ -273,12 +279,12 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:textColor="@color/black"
-                android:fontFamily="@font/forumregular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:text="Nós da A MOZZAFIATO oferecemos carros com história, carros clássicos que carregam lembranças. Prezamos pela transparência na venda de carros antigos, tendo como primordial objetivo a cumplicidade com seus clientes."/>
+                android:fontFamily="@font/forumregular"
+                android:text="Nós da A MOZZAFIATO oferecemos carros com história, carros clássicos que carregam lembranças. Prezamos pela transparência na venda de carros antigos, tendo como primordial objetivo a cumplicidade com seus clientes."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

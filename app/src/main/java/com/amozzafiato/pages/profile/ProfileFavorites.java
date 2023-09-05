@@ -1,6 +1,8 @@
 package com.amozzafiato.pages.profile;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,12 +23,16 @@ public class ProfileFavorites extends AppCompatActivity {
     private AdapterFavorites adapter;
     private FavoriteCarViewModel carViewModel;
 
+    private ImageView linkProfile;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_favorites);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
         String idUser = user.getUid();
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -43,11 +49,11 @@ public class ProfileFavorites extends AppCompatActivity {
 
         carViewModel.loadCars(idUser);
 
+        linkProfile = findViewById(R.id.page_favorites_arrow_back);
+
+        linkProfile.setOnClickListener(v -> {
+            onBackPressed();
+        });
     }
 }
 
-//        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView linkProfile = findViewById(R.id.profile_favorites_come_back_profile);
-//
-//        linkProfile.setOnClickListener(v -> {
-//            onBackPressed();
-//        });

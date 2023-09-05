@@ -242,6 +242,4 @@ public class PageCar extends AppCompatActivity {
                     // Erro ao adicionar o novo favorito
                 });
     }
-
-
 }
