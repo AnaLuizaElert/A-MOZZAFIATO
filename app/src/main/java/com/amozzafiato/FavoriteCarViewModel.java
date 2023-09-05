@@ -4,8 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -21,8 +19,9 @@ public class FavoriteCarViewModel extends ViewModel {
         return carsLiveData;
     }
 
-    public void loadCars(String userId) {
+    public void loadCars(List<Double> listfavorites) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 //        db.collection("TbFavorites")
 //                .get()
 //                .addOnSuccessListener(querySnapshot -> {
@@ -114,42 +113,60 @@ public class FavoriteCarViewModel extends ViewModel {
 //                });
 
 
-        db.collection("TbFavorites")
-                .whereEqualTo("idUser", userId)
+//        db.collection("TbFavorites")
+//                .whereEqualTo("idUser", userId)
+//                .get()
+//                .addOnSuccessListener(querySnapshot -> {
+//                    carsList.clear();
+//
+//                    List<Task<?>> tasks = new ArrayList<>();
+//
+//                    for (DocumentSnapshot document : querySnapshot) {
+//                        Double idCar = document.getDouble("idCar");
+//                        if (idCar != null) {
+//                            Task<DocumentSnapshot> carTask = db.collection("TbCar")
+//                                    .document(String.valueOf(idCar))
+//                                    .get()
+//                                    .addOnSuccessListener(documentCar -> {
+//                                        if (documentCar.exists()) {
+//                                            carsList.add(
+//                                                    new Favorite(
+//                                                            documentCar.getString("name"),
+//                                                            documentCar.getString("mainPhoto")
+//                                                    )
+//                                            );
+//                                        }
+//                                    });
+//                            tasks.add(carTask);
+//                        }
+//                    }
+//
+//                    Tasks.whenAllComplete(tasks)
+//                            .addOnSuccessListener(results -> {
+//                                carsLiveData.setValue(carsList);
+//                            });
+//                })
+//                .addOnFailureListener(e -> {
+//                    // Lida com falhas na consulta
+//                    e.printStackTrace();
+//                });
+
+        db.collection("TbCar")
                 .get()
-                .addOnSuccessListener(querySnapshot -> {
+                .addOnSuccessListener(documentSnapshot -> {
                     carsList.clear();
-
-                    List<Task<?>> tasks = new ArrayList<>();
-
-                    for (DocumentSnapshot document : querySnapshot) {
-                        Double idCar = document.getDouble("idCar");
-                        if (idCar != null) {
-                            Task<DocumentSnapshot> carTask = db.collection("TbCar")
-                                    .document(String.valueOf(idCar))
-                                    .get()
-                                    .addOnSuccessListener(documentCar -> {
-                                        if (documentCar.exists()) {
-                                            carsList.add(
-                                                    new Favorite(
-                                                            documentCar.getString("name"),
-                                                            documentCar.getString("mainPhoto")
-                                                    )
-                                            );
-                                        }
-                                    });
-                            tasks.add(carTask);
+                    for (DocumentSnapshot documentCar : documentSnapshot) {
+                        for (Double idFavorite : listfavorites) {
+                            if (documentCar.getId().equals(idFavorite.toString())) {
+                                carsList.add(
+                                        new Favorite(
+                                                documentCar.getString("name"),
+                                                documentCar.getString("mainPhoto"))
+                                );
+                            }
                         }
                     }
-
-                    Tasks.whenAllComplete(tasks)
-                            .addOnSuccessListener(results -> {
-                                carsLiveData.setValue(carsList);
-                            });
-                })
-                .addOnFailureListener(e -> {
-                    // Lida com falhas na consulta
-                    e.printStackTrace();
+                    carsLiveData.setValue(carsList);
                 });
     }
 
