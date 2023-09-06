@@ -1,21 +1,23 @@
 package com.amozzafiato.pages.profile;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import de.cketti.mailto.EmailIntentBuilder;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.R;
+
+import de.cketti.mailto.EmailIntentBuilder;
 
 public class ProfileContact extends AppCompatActivity {
 
     private Button sendEmail;
     private EditText message;
+    private ImageView linkProfile;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,14 +25,13 @@ public class ProfileContact extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_contact);
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView linkProfile = findViewById(R.id.profile_contact_come_back_profile);
+        linkProfile = findViewById(R.id.profile_contact_come_back_profile);
+        sendEmail = findViewById(R.id.profile_contact_button);
+        message = findViewById(R.id.profile_contact_message);
 
         linkProfile.setOnClickListener(v -> {
             onBackPressed();
         });
-
-        sendEmail = findViewById(R.id.profile_contact_button);
-        message = findViewById(R.id.profile_contact_message);
 
         sendEmail.setOnClickListener(v -> {
             String emailContent = message.getText().toString();
@@ -44,7 +45,7 @@ public class ProfileContact extends AppCompatActivity {
 
             // Inicie a tela de composição de email
             startActivity(emailIntent);
-            });
+        });
     }
 
 }

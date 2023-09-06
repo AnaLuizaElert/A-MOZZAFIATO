@@ -16,28 +16,34 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 public class PageCarImages extends AppCompatActivity {
 
     private LinearLayout imagesContainer;
+    private ImageView linkToInterestForm;
+    private TextView inputNameCar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_car_images);
 
-        ImageView linkToInterestForm = findViewById(R.id.page_car_arrow_back);
+        linkToInterestForm = findViewById(R.id.page_car_arrow_back);
 
         Intent intent = getIntent();
         Integer idCar = intent.getIntExtra("chaveAtributo", -1);
         String nameCar = intent.getStringExtra("nameCar");
 
-        TextView inputNameCar = findViewById(R.id.page_car_name);
+        inputNameCar = findViewById(R.id.page_car_name);
         inputNameCar.setText(nameCar);
+
+        generateDataDb(idCar);
 
         linkToInterestForm.setOnClickListener(v -> {
             onBackPressed();
         });
 
+    }
+
+    private void generateDataDb(Integer idCar) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         imagesContainer = findViewById(R.id.page_car_images_container);
-
         // Execute a consulta para buscar documentos na coleção "TbImages" com base no carId
         db.collection("TbImages")
                 .whereEqualTo("idCar", idCar)

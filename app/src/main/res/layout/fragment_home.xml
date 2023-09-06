@@ -42,17 +42,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/rounded_border"
                 android:fontFamily="@font/forumregular"
-                android:text="ACESSE NOSSA COLEÇÃO"
+                android:text="@string/home_collection"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 tools:ignore="TextContrastCheck" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_weight="1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,6 +97,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/home_first_car"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -144,6 +141,7 @@
                         android:src="@drawable/blackline_vertical" />
 
                     <LinearLayout
+                        android:id="@+id/home_second_car"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -187,6 +185,7 @@
                         android:src="@drawable/blackline_vertical" />
 
                     <LinearLayout
+                        android:id="@+id/home_third_car"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">

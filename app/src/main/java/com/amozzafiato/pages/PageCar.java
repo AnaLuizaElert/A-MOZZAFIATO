@@ -13,14 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.R;
 import com.bumptech.glide.Glide;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import de.cketti.mailto.EmailIntentBuilder;
 
@@ -83,9 +78,8 @@ public class PageCar extends AppCompatActivity {
 
     }
 
-
+    @SuppressLint("SetTextI18n")
     private void generateData() {
-        /*Buscar dados do carro no firebase*/
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String carName;
         Intent intent = getIntent();

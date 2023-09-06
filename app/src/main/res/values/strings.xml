@@ -1,12 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">A MOZZAFIATO</string>
     <string name="title_activity_splash">splash_activity</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="button_send">ENVIAR</string>
     <string name="yes">sim</string>
     <string name="not">não</string>
+
+    <string name="home_collection">ACESSE NOSSA COLEÇÃO</string>
 
     <string name="title_register">Cadastrar</string>
     <string name="category_input_image">Sua foto</string>

@@ -9,13 +9,10 @@ import android.text.style.UnderlineSpan;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amozzafiato.NavigationPage;
 import com.amozzafiato.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +30,7 @@ public class Register extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private static Uri selectedImageUri;
     private static String idImage;
-    private TextInputEditText name, country, state, image, email, password, confpassword;
+    private TextInputEditText name, country, state, email, password, confpassword;
     private TextView linkToLogin;
     private Button buttonChooseImage, register;
 
@@ -56,56 +52,14 @@ public class Register extends AppCompatActivity {
         buttonChooseImage = findViewById(R.id.register_image_edit);
         linkToLogin = findViewById(R.id.register_link_login);
 
-        /*Colocar underline no texto*/
-        String linkTextLogin = getResources().getString(R.string.link_forgot_password);
-        SpannableString spannableStringPassword = new SpannableString(linkTextLogin);
-        spannableStringPassword.setSpan(new UnderlineSpan(), 0, linkTextLogin.length(), 0);
-        linkToLogin.setText(spannableStringPassword);
+        putUnderlineOnLink();
 
         buttonChooseImage.setOnClickListener(v -> {
             openGallery();
         });
 
         register.setOnClickListener(v -> {
-            boolean isValid = true;
-
-            if (name.getText().toString().isEmpty()) {
-                name.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (state.getText().toString().isEmpty()) {
-                state.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (country.getText().toString().isEmpty()) {
-                country.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (email.getText().toString().isEmpty()) {
-                email.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (password.getText().toString().isEmpty()) {
-                password.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (confpassword.getText().toString().isEmpty()) {
-                confpassword.setError("Campo obrigatório");
-                isValid = false;
-            }
-
-            if (!confpassword.getText().toString().equals(password.getText().toString())) {
-                password.setError("Senhas diferentes!");
-                confpassword.setError("Senhas diferentes!");
-                isValid = false;
-            }
-
-            if (isValid) {
+            if (validation()) {
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
 
@@ -113,12 +67,11 @@ public class Register extends AppCompatActivity {
                 mAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                         .addOnCompleteListener(this, task -> {
                             if (task.isSuccessful()) {
-
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 assert user != null;
-                                String userId = user.getUid(); // Obtém o ID único do usuário
+                                String userId = user.getUid();
 
-                                saveUserDataToFirestore(
+                                generateDataDb(
                                         userId, // Passe o ID do usuário para usar como ID do documento
                                         name.getText().toString(),
                                         country.getText().toString(),
@@ -126,8 +79,6 @@ public class Register extends AppCompatActivity {
                                         email.getText().toString(),
                                         password.getText().toString()
                                 );
-
-
                             } else {
                                 Exception e = task.getException();
                                 if (e instanceof FirebaseAuthException) {
@@ -136,64 +87,88 @@ public class Register extends AppCompatActivity {
                             }
                         });
             }
-
         });
     }
 
-    private void saveUserDataToFirestore(
+    private Boolean validation() {
+        if (name.getText().toString().isEmpty()) {
+            name.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (state.getText().toString().isEmpty()) {
+            state.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (country.getText().toString().isEmpty()) {
+            country.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (email.getText().toString().isEmpty()) {
+            email.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (password.getText().toString().isEmpty()) {
+            password.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (confpassword.getText().toString().isEmpty()) {
+            confpassword.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (!confpassword.getText().toString().equals(password.getText().toString())) {
+            password.setError("Senhas diferentes!");
+            confpassword.setError("Senhas diferentes!");
+            return false;
+        }
+
+        return true;
+    }
+
+    private void putUnderlineOnLink() {
+        String linkTextLogin = getResources().getString(R.string.link_forgot_password);
+        SpannableString spannableStringPassword = new SpannableString(linkTextLogin);
+        spannableStringPassword.setSpan(new UnderlineSpan(), 0, linkTextLogin.length(), 0);
+        linkToLogin.setText(spannableStringPassword);
+    }
+
+    private void generateDataDb(
             String userId, String name, String country, String state, String email, String password
     ) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        Map<String, Object> userMap = new HashMap<>();
 
         StorageReference storageRef = FirebaseStorage.getInstance().getReference();
         StorageReference imageRef = storageRef.child("images/" + selectedImageUri.getLastPathSegment());
 
         imageRef.putFile(selectedImageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                idImage = uri.toString();
+                .addOnSuccessListener(taskSnapshot -> imageRef.getDownloadUrl()
+                        .addOnSuccessListener(uri -> {
+                            idImage = uri.toString();
 
-                                // Agora que você tem a URL da imagem, atualize o userMap e salve os dados no Firestore
-                                Map<String, Object> userMap = new HashMap<>();
-                                userMap.put("name", name);
-                                userMap.put("country", country);
-                                userMap.put("state", state);
-                                userMap.put("image", idImage);
-                                userMap.put("email", email);
-                                userMap.put("password", password);
+                            // Agora que você tem a URL da imagem, atualize o userMap e salve os dados no Firestore
+                            Map<String, Object> userMap1 = new HashMap<>();
+                            userMap1.put("name", name);
+                            userMap1.put("country", country);
+                            userMap1.put("state", state);
+                            userMap1.put("image", idImage);
+                            userMap1.put("email", email);
+                            userMap1.put("password", password);
 
-                                // Adicione os dados ao Firestore
-                                db.collection("TbUser").document(userId) // Use o ID do usuário como ID do documento
-                                        .set(userMap)
-                                        .addOnSuccessListener(aVoid -> {
-                                            // Dados salvos com sucesso
-                                            Intent intent = new Intent(Register.this, NavigationPage.class);
-                                            startActivity(intent);
-                                            finish();
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                // Ocorreu um erro ao salvar os dados no Firestore
-                                            }
-                                        });
-                            }
-                        });
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Ocorreu um erro ao fazer o upload da imagem
-                    }
-                });
-
+                            // Adicione os dados ao Firestore
+                            db.collection("TbUser").document(userId) // Use o ID do usuário como ID do documento
+                                    .set(userMap1)
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Dados salvos com sucesso
+                                        Intent intent = new Intent(Register.this, NavigationPage.class);
+                                        startActivity(intent);
+                                        finish();
+                                    });
+                        }));
 
     }
 

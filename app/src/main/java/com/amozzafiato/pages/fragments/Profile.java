@@ -3,17 +3,16 @@ package com.amozzafiato.pages.fragments;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.amozzafiato.pages.profile.ProfileContact;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
 import com.amozzafiato.R;
+import com.amozzafiato.pages.profile.ProfileContact;
 import com.amozzafiato.pages.profile.ProfileData;
 import com.amozzafiato.pages.profile.ProfileNegotiate;
 import com.bumptech.glide.Glide;
@@ -69,38 +68,40 @@ public class Profile extends Fragment {
         userName = view.findViewById(R.id.profile_name_user);
         profile = view.findViewById(R.id.profile_image);
 
+        generateDataBd();
 
         linkContact.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), ProfileContact.class);
-                startActivity(intent);
+            Intent intent = new Intent(getActivity(), ProfileContact.class);
+            startActivity(intent);
         });
 
-        linkData.setOnClickListener(v ->  {
-                Intent intent = new Intent(getActivity(), ProfileData.class);
-                startActivity(intent);
+        linkData.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ProfileData.class);
+            startActivity(intent);
         });
 
-        linkNegotiate.setOnClickListener(v ->  {
+        linkNegotiate.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ProfileNegotiate.class);
             startActivity(intent);
         });
 
-        /*Colocar dados do usuário*/
+        return view;
+    }
+
+    private void generateDataBd() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         db.collection("TbUser").document(userId).get()
                 .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        userName.setText(documentSnapshot.getString("name"));
-                        userState.setText(documentSnapshot.getString("state"));
-                        Glide.with(this)
-                                .load(documentSnapshot.getString("image"))
-                                .into(profile);
-                    }
-                }
-        );
-
-        return view;
+                            if (documentSnapshot.exists()) {
+                                userName.setText(documentSnapshot.getString("name"));
+                                userState.setText(documentSnapshot.getString("state"));
+                                Glide.with(this)
+                                        .load(documentSnapshot.getString("image"))
+                                        .into(profile);
+                            }
+                        }
+                );
     }
 }

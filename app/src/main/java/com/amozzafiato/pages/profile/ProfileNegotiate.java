@@ -1,18 +1,14 @@
 package com.amozzafiato.pages.profile;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.amozzafiato.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseUser;
 
 public class ProfileNegotiate extends AppCompatActivity {
 
@@ -36,56 +32,58 @@ public class ProfileNegotiate extends AppCompatActivity {
         linkProfile = findViewById(R.id.profile_negotiate_come_back_profile);
 
         linkPage2.setOnClickListener(v -> {
-                boolean isValid = true;
-
-                if (name.getText().toString().isEmpty()) {
-                    name.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (model.getText().toString().isEmpty()) {
-                    model.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (year.getText().toString().isEmpty()) {
-                    year.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (km.getText().toString().isEmpty()) {
-                    km.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (fuel.getText().toString().isEmpty()) {
-                    fuel.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (color.getText().toString().isEmpty()) {
-                    color.setError("Campo obrigatório");
-                    isValid = false;
-                }
-
-                if (isValid) {
-                    Intent intent = new Intent(ProfileNegotiate.this, ProfileNegotiate2.class);
-                    String message =
-                            "\n**DADOS DO CARRO**" +
-                                    "\nNome: " + name.getText().toString() +
-                                    "\nModelo: " + model.getText().toString() +
-                                    "\nAno: " + year.getText().toString() +
-                                    "\nKm rodados: " + km.getText().toString() +
-                                    "\nCombustível: " + fuel.getText().toString() +
-                                    "\nCor: " + color.getText().toString();
-                    intent.putExtra("message", message);
-                    startActivity(intent);
-                    finish();
-                }
+            if (validation()) {
+                Intent intent = new Intent(ProfileNegotiate.this, ProfileNegotiate2.class);
+                String message =
+                        "\n**DADOS DO CARRO**" +
+                                "\nNome: " + name.getText().toString() +
+                                "\nModelo: " + model.getText().toString() +
+                                "\nAno: " + year.getText().toString() +
+                                "\nKm rodados: " + km.getText().toString() +
+                                "\nCombustível: " + fuel.getText().toString() +
+                                "\nCor: " + color.getText().toString();
+                intent.putExtra("message", message);
+                startActivity(intent);
+                finish();
+            }
         });
 
         linkProfile.setOnClickListener(v -> {
             onBackPressed();
         });
+    }
+
+    private Boolean validation() {
+        if (name.getText().toString().isEmpty()) {
+            name.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (model.getText().toString().isEmpty()) {
+            model.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (year.getText().toString().isEmpty()) {
+            year.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (km.getText().toString().isEmpty()) {
+            km.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (fuel.getText().toString().isEmpty()) {
+            fuel.setError("Campo obrigatório");
+            return false;
+        }
+
+        if (color.getText().toString().isEmpty()) {
+            color.setError("Campo obrigatório");
+            return false;
+        }
+
+        return true;
     }
 }

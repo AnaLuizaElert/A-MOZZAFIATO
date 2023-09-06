@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.amozzafiato.R;
+import com.amozzafiato.pages.PageCar;
 import com.amozzafiato.pages.SearchingCar;
 import com.bumptech.glide.Glide;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,8 +30,10 @@ public class Home extends Fragment {
     private Space emptySpace;
     private ScrollView scrollView;
     private int originalSpaceHeight, count;
-    private Button seeCollectionButton, colection;
+    private Button seeCollectionButton;
+    private LinearLayout firstCar, secondCar, thirdCar;
     private TextView nameCar, price;
+    private String nameFirstCar, nameSecondCar, nameThirdCar;
     private ImageView mainPhoto;
 
     @SuppressLint({"CutPasteId", "MissingInflatedId", "SetTextI18n"})
@@ -43,19 +46,16 @@ public class Home extends Fragment {
         scrollView = view.findViewById(R.id.scrollView);
         seeCollectionButton = view.findViewById(R.id.fragment_home_button_see_collection);
 
+        //Inicializa os containers dos carros
+        firstCar = view.findViewById(R.id.home_first_car);
+        secondCar = view.findViewById(R.id.home_second_car);
+        thirdCar = view.findViewById(R.id.home_third_car);
+
         // Obtém a altura original do espaço vazio (Space) e a altura do botão
         originalSpaceHeight = getResources().getDimensionPixelSize(R.dimen.space_height);
         int buttonHeight = seeCollectionButton.getHeight();
         // Rolando para o topo da página
         scrollView.post(() -> scrollView.scrollTo(0, 0));
-
-        colection = view.findViewById(R.id.fragment_home_button_see_collection);
-
-        colection.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), SearchingCar.class);
-            intent.putExtra("category", "TODOS");
-            startActivity(intent);
-        });
 
         // Escuta as alterações de rolagem do ScrollView
         scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
@@ -65,7 +65,7 @@ public class Home extends Fragment {
                 int scrollY = scrollView.getScrollY();
 
                 // Ajuste o fator de ajuste para controlar a rapidez da diminuição do espaço
-                float sizeAdjustmentFactor = 0.8f; // Experimente diferentes valores
+                float sizeAdjustmentFactor = 0.8f;
 
                 // Calcula a altura desejada para o espaço vazio de acordo com o fator de ajuste
                 int desiredSpaceHeight = (int) (originalSpaceHeight - scrollY * sizeAdjustmentFactor);
@@ -80,52 +80,76 @@ public class Home extends Fragment {
             }
         });
 
+        generateDataDB(view);
+
+        seeCollectionButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), SearchingCar.class);
+            intent.putExtra("category", "TODOS");
+            startActivity(intent);
+        });
+
+        firstCar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PageCar.class);
+            intent.putExtra("carName", nameFirstCar);
+            startActivity(intent);
+        });
+
+        secondCar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PageCar.class);
+            intent.putExtra("carName", nameSecondCar);
+            startActivity(intent);
+        });
+
+        thirdCar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), PageCar.class);
+            intent.putExtra("carName", nameThirdCar);
+            startActivity(intent);
+        });
+
+        return view;
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void generateDataDB(View view) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         db.collection("TbCar")
+                .limit(3)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     for (DocumentSnapshot documentSnapshot : querySnapshot) {
                         count++;
                         if (count == 1) {
-                            nameCar = view.findViewById(R.id.home_first_name_car);
-                            mainPhoto = view.findViewById(R.id.home_first_image_car);
-                            price = view.findViewById(R.id.home_first_price_car);
+                            nameFirstCar = documentSnapshot.getString("name");
 
-                            nameCar.setText(documentSnapshot.getString("name"));
-                            price.setText("R$ " + documentSnapshot.getDouble("price"));
-                            Glide.with(this)
-                                    .load(documentSnapshot.getString("mainPhoto"))
-                                    .into(mainPhoto);
+                            nameCar = view.findViewById(R.id.home_first_name_car);
+                            price = view.findViewById(R.id.home_first_price_car);
+                            mainPhoto = view.findViewById(R.id.home_first_image_car);
+
                         } else if (count == 2) {
+                            nameSecondCar = documentSnapshot.getString("name");
 
                             nameCar = view.findViewById(R.id.home_second_name_car);
-                            mainPhoto = view.findViewById(R.id.home_second_image_car);
                             price = view.findViewById(R.id.home_second_price_car);
+                            mainPhoto = view.findViewById(R.id.home_second_image_car);
 
-                            nameCar.setText(documentSnapshot.getString("name"));
-                            price.setText("R$ " + documentSnapshot.getDouble("price"));
-                            Glide.with(this)
-                                    .load(documentSnapshot.getString("mainPhoto"))
-                                    .into(mainPhoto);
                         } else if (count == 3) {
+                            nameThirdCar = documentSnapshot.getString("name");
 
                             nameCar = view.findViewById(R.id.home_third_name_car);
-                            mainPhoto = view.findViewById(R.id.home_third_image_car);
                             price = view.findViewById(R.id.home_third_price_car);
+                            mainPhoto = view.findViewById(R.id.home_third_image_car);
 
-                            nameCar.setText(documentSnapshot.getString("name"));
-                            price.setText("R$ " + documentSnapshot.getDouble("price"));
-                            Glide.with(this)
-                                    .load(documentSnapshot.getString("mainPhoto"))
-                                    .into(mainPhoto);
                         }
+
+                        nameCar.setText(documentSnapshot.getString("name"));
+                        price.setText("R$ " + documentSnapshot.getDouble("price"));
+                        Glide.with(this)
+                                .load(documentSnapshot.getString("mainPhoto"))
+                                .into(mainPhoto);
+
                     }
-                })
-                .addOnFailureListener(e -> {
-                    // Erro ao adicionar o novo favorito
                 });
 
-        return view;
     }
 }

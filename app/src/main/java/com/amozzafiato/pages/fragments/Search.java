@@ -1,6 +1,5 @@
 package com.amozzafiato.pages.fragments;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,12 +19,11 @@ import com.amozzafiato.pages.SearchingCar;
  */
 public class Search extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+    private ImageView european, american, convertible, coupe, hot, pickup, national;
+
     private String mParam1;
     private String mParam2;
 
@@ -41,7 +39,6 @@ public class Search extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment Search.
      */
-    // TODO: Rename and change types and number of parameters
     public static Search newInstance(String param1, String param2) {
         Search fragment = new Search();
         Bundle args = new Bundle();
@@ -67,18 +64,17 @@ public class Search extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         // Configurar o clique do botão no CardView
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView european = view.findViewById(R.id.search_european_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView american = view.findViewById(R.id.search_american_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView convertible = view.findViewById(R.id.search_convertible_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView coupe = view.findViewById(R.id.search_coupe_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView hot = view.findViewById(R.id.search_hot_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView pickup = view.findViewById(R.id.search_pickup_category);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView national = view.findViewById(R.id.search_national_category);
+        european = view.findViewById(R.id.search_european_category);
+        american = view.findViewById(R.id.search_american_category);
+        convertible = view.findViewById(R.id.search_convertible_category);
+        coupe = view.findViewById(R.id.search_coupe_category);
+        hot = view.findViewById(R.id.search_hot_category);
+        pickup = view.findViewById(R.id.search_pickup_category);
+        national = view.findViewById(R.id.search_national_category);
 
 
         european.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), SearchingCar.class);
-            // Passando o parâmetro para a próxima página
             intent.putExtra("category", "Europeu");
             startActivity(intent);
         });
