@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_gradient"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     tools:context=".pages.fragments.Search">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,70 +21,52 @@
                 android:id="@+id/registerAppName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:fontFamily="@font/forumregular"
-
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+
+                android:fontFamily="@font/forumregular"
+                android:text="@string/app_name"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="350dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/rounded_border"
-                android:backgroundTint="@color/lightGray"
-                android:forceDarkAllowed="true"
-                android:hint="@string/app_name"
-                android:imeOptions="actionSearch"
-                android:importantForContentCapture="yes"
-                android:inputType="text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:searchIcon="@drawable/search_blue"
-                />
-
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:orientation="horizontal"
-                    android:textAlignment="center">
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:textAlignment="center">
 
-                    <ImageView
-                        android:id="@+id/lineCategoryLeft"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/line"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/title_category"  />
+                <ImageView
+                    android:id="@+id/search_line_left"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/title_category"
+                    android:src="@drawable/line" />
 
-                    <TextView
-                        android:id="@+id/CategorTitle"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/forumregular"
-                        android:text="@string/title_category"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
-                        android:textSize="30sp" />
+                <TextView
+                    android:id="@+id/search_title"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/forumregular"
+                    android:text="@string/title_category"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
 
-                    <ImageView
-                        android:id="@+id/lineCategoryRight"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/line"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/title_category"  />
+                <ImageView
+                    android:id="@+id/search_line_right"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/title_category"
+                    android:src="@drawable/line" />
 
-                </LinearLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -97,19 +78,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="10dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/blueMozzafiato"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/blueMozzafiato">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchConvertibleCategory"
+                        android:id="@+id/search_convertible_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/convertible"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/convertible" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -117,19 +98,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="220dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchCoupeCategory"
+                        android:id="@+id/search_coupe_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/coupe"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/coupe" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -145,19 +126,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="10dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchPickupCategory"
+                        android:id="@+id/search_pickup_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/pickup"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/pickup" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -165,19 +146,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="220dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchHotCategory"
+                        android:id="@+id/search_hot_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/hot"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/hot" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -193,19 +174,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="10dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchNationalCategory"
+                        android:id="@+id/search_national_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/national"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/national" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -213,19 +194,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="220dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchAmericanCategory"
+                        android:id="@+id/search_american_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/american"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/american" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -241,19 +222,19 @@
                     android:layout_width="180dp"
                     android:layout_height="140dp"
                     android:layout_marginStart="10dp"
-                    app:cardElevation="10dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardPreventCornerOverlap="false"
+                    android:backgroundTint="@color/lightGray"
                     app:cardCornerRadius="10dp"
-                    android:backgroundTint="@color/lightGray">
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:id="@+id/searchEuropeanCategory"
+                        android:id="@+id/search_european_category"
+                        style="@style/StyleImageCardCategories"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        style="@style/StyleImageCardCategories"
-                        android:src="@drawable/european"
-                        android:contentDescription="@string/title_category"  />
+                        android:contentDescription="@string/title_category"
+                        android:src="@drawable/european" />
 
                 </androidx.cardview.widget.CardView>
 

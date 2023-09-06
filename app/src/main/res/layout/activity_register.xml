@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/registerAppName"
+            android:id="@+id/register_app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
@@ -28,7 +28,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/titleRegister"
+            android:id="@+id/register_title"
             android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -42,7 +42,7 @@
             android:textSize="50sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameRegisterLayout"
+            android:id="@+id/register_name_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameRegisterEdit"
+                android:id="@+id/register_name_edit"
                 style="@style/StyleTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/phoneRegisterLayout"
+            android:id="@+id/register_email_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -87,16 +87,40 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phoneRegisterEdit"
+                android:id="@+id/register_email_edit"
                 style="@style/StyleTextField"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/category_input_phone" />
+
+                android:hint="@string/category_input_email"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <Button
+            android:id="@+id/register_image_edit"
+            style="@style/StyleInput"
+            android:layout_width="272dp"
+            android:layout_height="60dp"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="355dp"
+            android:layout_marginEnd="50dp"
+
+            android:backgroundTint="@color/grayInput"
+            android:text="@string/profile_negotiate_images_hint"
+            android:textAlignment="textStart"
+            android:textColor="@color/grayMozzafiato"
+            android:textSize="11sp"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/upload"
+
+            tools:ignore="MissingConstraints"/>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailRegisterLayout"
+            android:id="@+id/register_country_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -105,7 +129,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="430dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -114,16 +138,16 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailRegisterEdit"
+                android:id="@+id/register_country_edit"
                 style="@style/StyleTextField"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                android:hint="@string/category_input_email"/>
+                android:hint="@string/category_input_country" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordRegisterLayout"
+            android:id="@+id/register_state_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -132,7 +156,34 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="230dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_state_edit"
+                style="@style/StyleTextField"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/category_input_state" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_password_layout"
+            style="@style/StyleInput"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="590dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:endIconMode="password_toggle"
@@ -143,7 +194,7 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordRegisterEdit"
+                android:id="@+id/register_password_edit"
                 style="@style/StyleTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,7 +204,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordConfirmRegisterLayout"
+            android:id="@+id/register_confpassword_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -162,7 +213,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="670dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
             app:endIconMode="password_toggle"
@@ -172,7 +223,7 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordConfirmRegisterEdit"
+                android:id="@+id/register_confpassword_edit"
                 style="@style/StyleTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -181,7 +232,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/registerButton"
+            android:id="@+id/register_button"
             style="@style/StyleButton"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
@@ -189,20 +240,20 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="630dp"
+            android:layout_marginTop="740dp"
             android:layout_marginEnd="50dp"
             android:text="@string/title_register"
             android:background="@drawable/rounded_border" />
 
         <TextView
-            android:id="@+id/linkRegisterLogin"
+            android:id="@+id/register_link_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="92dp"
-            android:layout_marginTop="690dp"
+            android:layout_marginTop="810dp"
             android:layout_marginEnd="92dp"
             android:textAlignment="center"
             android:fontFamily="@font/forumregular"

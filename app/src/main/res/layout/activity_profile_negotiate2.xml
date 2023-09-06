@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_profile"
     android:orientation="horizontal"
-    tools:context=".pages.ProfileNegotiate2">
+    tools:context=".pages.profile.ProfileNegotiate2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -110,28 +110,7 @@
 
                         </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/profile_negotiate_images"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
 
-                        <Button
-                            android:id="@+id/profile_negotiate2_input_images"
-                            android:layout_width="300dp"
-                            android:layout_height="53dp"
-                            android:backgroundTint="@color/white"
-                            android:text="@string/profile_negotiate_images_hint"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/grayMozzafiato"
-                            android:textSize="11sp"
-                            app:cornerRadius="42dp"
-                            app:icon="@drawable/upload"
-                            tools:ignore="TouchTargetSizeCheck" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -219,7 +198,7 @@
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="300dp"
-                            android:layout_height="110dp"
+                            android:layout_height="150dp"
                             android:layout_marginTop="5dp"
                             android:backgroundTint="@color/white"
                             app:cardCornerRadius="25dp"
@@ -227,7 +206,7 @@
                             app:cardPreventCornerOverlap="false"  >
 
                             <EditText
-                                android:id="@+id/editTextTextMultiLine"
+                                android:id="@+id/profile_negotiate2_input_obs"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:backgroundTint="@color/white"

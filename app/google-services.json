@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "170092288862",
+    "project_id": "amozzafiato-3b14d",
+    "storage_bucket": "amozzafiato-3b14d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170092288862:android:56e819939c54b379dd4dcf",
+        "android_client_info": {
+          "package_name": "com.amozzafiato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170092288862-3hrfmbbhjufk99l35bmceeui5rov6j31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZM6gkN6J6QjR34e5hPTiHdArKOe6_O_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170092288862-3hrfmbbhjufk99l35bmceeui5rov6j31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

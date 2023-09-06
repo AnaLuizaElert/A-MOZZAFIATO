@@ -1,26 +1,32 @@
 package com.amozzafiato.pages.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import com.amozzafiato.pages.ProfileContact;
 import com.amozzafiato.R;
-import com.amozzafiato.pages.ProfileData;
-import com.amozzafiato.pages.ProfileFavorites;
-import com.amozzafiato.pages.ProfileNegotiate;
+import com.amozzafiato.pages.profile.ProfileContact;
+import com.amozzafiato.pages.profile.ProfileData;
+import com.amozzafiato.pages.profile.ProfileNegotiate;
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Profile extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private TextView userState, userName;
+    private CircleImageView profile;
     private String mParam1;
     private String mParam2;
 
@@ -47,6 +53,7 @@ public class Profile extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,29 +63,45 @@ public class Profile extends Fragment {
         CardView linkContact = view.findViewById(R.id.link_contact_profile);
         CardView linkData = view.findViewById(R.id.link_data_profile);
         CardView linkNegotiate = view.findViewById(R.id.link_data_negotiate);
-        CardView linkFavorites = view.findViewById(R.id.link_data_favorites);
 
+        userState = view.findViewById(R.id.profile_state_user);
+        userName = view.findViewById(R.id.profile_name_user);
+        profile = view.findViewById(R.id.profile_image);
+
+        generateDataBd();
 
         linkContact.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), ProfileContact.class);
-                startActivity(intent);
+            Intent intent = new Intent(getActivity(), ProfileContact.class);
+            startActivity(intent);
         });
 
-        linkData.setOnClickListener(v ->  {
-                Intent intent = new Intent(getActivity(), ProfileData.class);
-                startActivity(intent);
+        linkData.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ProfileData.class);
+            startActivity(intent);
         });
 
-        linkNegotiate.setOnClickListener(v ->  {
+        linkNegotiate.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ProfileNegotiate.class);
             startActivity(intent);
         });
 
-        linkFavorites.setOnClickListener(v ->  {
-            Intent intent = new Intent(getActivity(), ProfileFavorites.class);
-            startActivity(intent);
-        });
-
         return view;
+    }
+
+    private void generateDataBd() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        db.collection("TbUser").document(userId).get()
+                .addOnSuccessListener(documentSnapshot -> {
+                            if (documentSnapshot.exists()) {
+                                userName.setText(documentSnapshot.getString("name"));
+                                userState.setText(documentSnapshot.getString("state"));
+                                Glide.with(this)
+                                        .load(documentSnapshot.getString("image"))
+                                        .into(profile);
+                            }
+                        }
+                );
     }
 }

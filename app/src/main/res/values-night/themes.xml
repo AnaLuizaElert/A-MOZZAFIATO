@@ -10,7 +10,9 @@
         <item name="colorSecondaryVariant">@color/governor_bay</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">#00FFFFFF</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@drawable/background_gradient</item>
     </style>
 </resources>

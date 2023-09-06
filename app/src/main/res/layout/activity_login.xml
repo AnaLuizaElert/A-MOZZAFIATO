@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_gradient"
-    android:id="@+id/backgroud_login1"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:id="@+id/backgroud_login">
 
 
     <RelativeLayout
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/loginAppName"
+            android:id="@+id/login_app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
@@ -30,7 +31,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/titleLogin"
+            android:id="@+id/login_title"
             android:layout_width="193dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -44,7 +45,7 @@
             android:textSize="50sp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameLoginLayout"
+            android:id="@+id/login_email_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -62,16 +63,16 @@
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameLoginEdit"
+                android:id="@+id/login_email_edit"
                 style="@style/StyleTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:hint="@string/category_input_name" />
+                android:hint="@string/category_input_email" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLoginLayout"
+            android:id="@+id/login_password_layout"
             style="@style/StyleInput"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
@@ -83,22 +84,26 @@
             android:layout_marginTop="380dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="230dp"
+
+            app:endIconMode="password_toggle"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordLoginEdit"
+                android:id="@+id/login_password_edit"
                 style="@style/StyleTextField"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/category_input_password" />
+
+                android:hint="@string/category_input_password"
+                android:inputType="text|textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/linkLoginForgotPassword"
+            android:id="@+id/login_link_forgot_password"
             style="@style/StyleLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,7 +124,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/login_button_login"
             style="@style/StyleButton"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
@@ -133,7 +138,7 @@
             android:background="@drawable/rounded_border" />
 
         <TextView
-            android:id="@+id/linkLoginRegister"
+            android:id="@+id/login_link_register"
             style="@style/StyleLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
