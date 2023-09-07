@@ -31,8 +31,7 @@
     </style>
 
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:backgroundDimAmount">0.5
-        </item> <!-- Ajuste a transparência aqui (de 0 a 1) -->
+        <item name="android:backgroundDimAmount">0.5</item>
     </style>
 
     <style name="StyleLink" parent="Widget.AppCompat.TextView">
@@ -43,8 +42,7 @@
 
     <style name="StyleImageCardCategories" parent="Widget.AppCompat.ImageButton">
         <item name="android:scaleType">centerCrop</item>
-        <item name="android:background">@drawable/rounded_border_white
-        </item> <!-- Referência ao arquivo rounded_border.xml -->
+        <item name="android:background">@drawable/rounded_border_white</item>
         <item name="android:backgroundTint">@color/lightGray</item>
     </style>
 

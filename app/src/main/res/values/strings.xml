@@ -8,7 +8,7 @@
 
     <string name="home_collection">ACESSE NOSSA COLEÇÃO</string>
 
-    <string name="title_register">Cadastrar</string>
+    <string name="title_register">CADASTRO</string>
     <string name="category_input_image">Sua foto</string>
     <string name="category_input_country">País</string>
     <string name="category_input_state">Estado</string>
@@ -18,7 +18,7 @@
     <string name="category_input_confirm_password">Confirmar senha</string>
     <string name="link_login">Efetuar login</string>
 
-    <string name="title_login">Login</string>
+    <string name="title_login">LOGIN</string>
     <string name="link_register">Cadastre-se</string>
     <string name="link_forgot_password">Esqueceu a senha?</string>
 

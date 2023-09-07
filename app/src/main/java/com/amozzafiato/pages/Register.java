@@ -131,7 +131,7 @@ public class Register extends AppCompatActivity {
     }
 
     private void putUnderlineOnLink() {
-        String linkTextLogin = getResources().getString(R.string.link_forgot_password);
+        String linkTextLogin = getResources().getString(R.string.link_login);
         SpannableString spannableStringPassword = new SpannableString(linkTextLogin);
         spannableStringPassword.setSpan(new UnderlineSpan(), 0, linkTextLogin.length(), 0);
         linkToLogin.setText(spannableStringPassword);
