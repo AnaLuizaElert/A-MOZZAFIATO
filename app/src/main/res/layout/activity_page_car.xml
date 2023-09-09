@@ -3,17 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginBottom="10dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:ignore="SpeakableTextPresentCheck">
-
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,31 +12,24 @@
 
         <TextView
             android:id="@+id/registerAppName"
+            style="@style/amozzafiatoText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-
-            android:fontFamily="@font/forumregular"
-            android:text="@string/app_name"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:text="@string/app_name" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp"
-            android:backgroundTint="@color/white"
             app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -66,10 +49,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:paddingRight="20dp"
                         android:fontFamily="@font/forumregular"
                         android:gravity="center_vertical|end"
+                        android:paddingRight="20dp"
                         android:text="@string/page_car_name"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -83,16 +67,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:visibility="visible" />
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="10dp"
-                    android:layout_weight="1" />
-
-                <LinearLayout
-                    android:layout_width="1100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -133,6 +114,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal"
                     android:textAlignment="center">
 
@@ -152,7 +134,7 @@
                         android:fontFamily="@font/forumregular"
                         android:gravity="center|center_vertical"
                         android:text="@string/page_car_price"
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="20dp" />
 
                     <ImageView
@@ -165,37 +147,29 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/page_car_button_interested"
-                        android:layout_width="320dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="30dp"
-                        android:background="@drawable/rounded_border"
-                        android:fontFamily="@font/forumregular"
-                        android:text="@string/page_car_interest"
-                        android:textColor="@color/white"
-                        android:textSize="20dp"
-                        tools:ignore="TextContrastCheck" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="520dp"
+                <Button
+                    android:id="@+id/page_car_button_interested"
+                    style="@style/StyleButton"
+                    android:layout_width="320dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_border"
+                    android:text="@string/page_car_interest" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_border"
                     android:backgroundTint="#B6C8CF"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp">
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:id="@+id/line_data_left"
@@ -214,6 +188,7 @@
                             android:fontFamily="@font/forumregular"
                             android:gravity="center_vertical"
                             android:text="@string/page_car_data"
+                            android:textColor="@color/black"
                             android:textSize="25dp" />
 
                         <ImageView
@@ -230,342 +205,264 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
 
                         <TextView
+                            style="@style/StyleDescriptionCar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="30dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/forumregular"
                             android:gravity="start|center_vertical"
                             android:text="@string/page_car_year"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/page_car_year"
+                            style="@style/StyleDescriptionCar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/forumregular"
+                            android:layout_marginStart="10dp"
                             android:gravity="start|center_vertical"
-                            android:text="@string/page_car_year"
-                            android:textSize="20sp" />
+                            android:text="@string/page_car_loading" />
 
                         <TextView
+                            style="@style/StyleDescriptionCar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/forumregular"
+                            android:layout_marginStart="80dp"
                             android:gravity="center_vertical|end"
                             android:text="@string/page_car_km"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/page_car_km"
+                            style="@style/StyleDescriptionCar"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/page_car_loading"
-                            android:textSize="20sp" />
-
+                            android:layout_marginStart="10dp"
+                            android:text="@string/page_car_loading" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_exchange"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_exchange"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_category"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_category"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_engine"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_engine"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_fuel"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_fuel"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_traction"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_traction"
-                                android:layout_width="200dp"
+                                style="@style/StyleDescriptionCar"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginRight="30dp"
-                                android:layout_weight="2"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_max_speed"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_engine_max_speed"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_brand"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_brand"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_doors"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_doors"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_marginLeft="30dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/forumregular"
                                 android:gravity="start|center_vertical"
                                 android:text="@string/page_car_cv"
-                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/page_car_horse_power"
+                                style="@style/StyleDescriptionCar"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="7"
-                                android:fontFamily="@font/forumregular"
-                                android:text="@string/page_car_loading"
-                                android:textSize="20sp" />
+                                android:layout_marginStart="10dp"
+                                android:text="@string/page_car_loading" />
 
                         </LinearLayout>
 
@@ -574,7 +471,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 </ScrollView>

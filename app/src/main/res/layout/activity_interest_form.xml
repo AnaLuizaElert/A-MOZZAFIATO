@@ -1,66 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@android:color/transparent">
+    android:background="@drawable/rounded_border_gray"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="380dp"
+    <TextView
+        style="@style/StyleTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/profile_contact_description" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/grayMozzafiato"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:fontFamily="@font/forumregular"
-            android:text="@string/profile_contact_description"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+        <EditText
+            android:id="@+id/interest_form_description"
+            android:layout_width="320dp"
             android:layout_height="180dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
             android:backgroundTint="@color/white"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="10dp"
-            app:cardPreventCornerOverlap="false">
 
-            <EditText
-                android:id="@+id/interest_form_description"
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/forumregular"
-                android:gravity="start"
-                android:inputType="textMultiLine"
-                android:padding="20dp"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:typeface="normal"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/interest_form_button_send"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/rounded_border"
             android:fontFamily="@font/forumregular"
-            android:text="@string/button_send"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:gravity="start"
+            android:inputType="textMultiLine"
+            android:padding="20dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:typeface="normal"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    </LinearLayout>
-</RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/interest_form_button_send"
+        style="@style/StyleButton"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_border"
+        android:text="@string/button_send" />
+
+</LinearLayout>

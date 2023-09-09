@@ -8,15 +8,10 @@
 
     <TextView
         android:id="@+id/registerAppName"
+        style="@style/amozzafiatoText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/forumregular"
-        android:text="@string/app_name"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:text="@string/app_name" />
 
     <Space
         android:id="@+id/emptySpace"
@@ -70,7 +65,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/forumregular"
                     android:gravity="center|center_vertical"
-                    android:text="NOVIDADES"
+                    android:text="@string/home_news"
                     android:textColor="#000000"
                     android:textSize="20dp" />
 
@@ -228,7 +223,6 @@
                         android:layout_weight="1"
                         android:src="@drawable/blackline_vertical" />
 
-
                 </LinearLayout>
 
             </HorizontalScrollView>
@@ -258,7 +252,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/forumregular"
                     android:gravity="center|center_vertical"
-                    android:text="SOBRE NÓS"
+                    android:text="@string/home_about_us"
                     android:textColor="#000000"
                     android:textSize="20dp" />
 
@@ -281,7 +275,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/forumregular"
-                android:text="Nós da A MOZZAFIATO oferecemos carros com história, carros clássicos que carregam lembranças. Prezamos pela transparência na venda de carros antigos, tendo como primordial objetivo a cumplicidade com seus clientes."
+                android:text="@string/home_about_us_description"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 

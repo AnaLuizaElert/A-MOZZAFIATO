@@ -39,7 +39,9 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/forumregular"
                 android:gravity="center_vertical|end"
+                android:paddingEnd="20dp"
                 android:text="@string/page_car_name"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
         </LinearLayout>

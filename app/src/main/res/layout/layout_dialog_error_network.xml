@@ -8,22 +8,17 @@
 
     <TextView
         android:id="@+id/text_view_dialog_title"
+        style="@style/StyleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/forumregular"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Conecte-se a internet!"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="@string/internet_error" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/internet_error">
-
-    </ImageView>
+        android:src="@drawable/internet_error"></ImageView>
 
 </LinearLayout>

@@ -8,338 +8,278 @@
     android:orientation="horizontal"
     tools:context=".pages.profile.ProfileContact">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/registerAppName"
+            style="@style/amozzafiatoText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" />
 
-            <TextView
-                android:id="@+id/registerAppName"
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-20dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/grayMozzafiato"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
-                android:fontFamily="@font/forumregular"
-                android:text="@string/app_name"
-                android:textAlignment="textStart"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp">
 
+                    <ImageView
+                        android:id="@+id/profile_data_come_back_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/arrow_left" />
 
+                    <TextView
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/forumregular"
+                        android:paddingEnd="20dp"
+                        android:text="@string/profile_data_title"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="-20dp"
-                android:layout_marginTop="25dp"
-                android:backgroundTint="@color/grayMozzafiato"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="10dp"
-                app:cardPreventCornerOverlap="false">
+                    <ImageView
+                        android:id="@+id/profile_data_edit"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/file_edit" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginBottom="40dp"
+                    android:orientation="vertical"
+                    android:paddingStart="50dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:paddingStart="20dp">
-
-                        <ImageView
-                            android:id="@+id/profile_data_come_back_profile"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/arrow_left"/>
-
-                        <TextView
-                            android:layout_width="270dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/profile_data_title"
-                            android:textColor="@color/white"
-                            android:textAlignment="center"
-                            android:textSize="25sp"
-                            android:paddingEnd="20dp"/>
-
-                        <ImageView
-                            android:id="@+id/profile_data_edit"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/file_edit"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        style="@style/StyleLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="40dp"
-                        android:paddingStart="50dp">
+                        android:text="@string/category_input_name" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_name"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="false">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
+                            android:id="@+id/profile_data_card_name"
+                            android:layout_width="298dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/grayMozzafiato"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_name"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_name"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="298dp"
-                                    android:layout_height="40dp"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:text="@string/category_input_name"
-                                    android:textAlignment="viewStart"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
+                            <EditText
+                                android:id="@+id/profile_data_input_name"
+                                style="@style/StyleInputData"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/category_input_name"
+                                tools:ignore="TouchTargetSizeCheck" />
 
-                            </androidx.cardview.widget.CardView>
                         </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_image"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <TextView
+                        style="@style/StyleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/category_input_image" />
 
-                        <ImageView
-                            android:id="@+id/profile_data_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="150dp">
+                    <ImageView
+                        android:id="@+id/profile_data_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150dp">
 
-                        </ImageView>
+                    </ImageView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_country"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <TextView
+                        style="@style/StyleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/category_input_country" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="false">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
+                            android:id="@+id/profile_data_card_country"
+                            android:layout_width="298dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/grayMozzafiato"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_country"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_country"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="298dp"
-                                    android:layout_height="40dp"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:text="@string/category_input_country"
-                                    android:textAlignment="gravity"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-                            </androidx.cardview.widget.CardView>
+                            <EditText
+                                android:id="@+id/profile_data_input_country"
+                                style="@style/StyleInputData"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/category_input_country"
+                                tools:ignore="TouchTargetSizeCheck" />
                         </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_state"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <TextView
+                        style="@style/StyleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/category_input_state" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="false">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
+                            android:id="@+id/profile_data_card_state"
+                            android:layout_width="298dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/grayMozzafiato"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_state"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_state"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="298dp"
-                                    android:layout_height="40dp"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:text="@string/category_input_state"
-                                    android:textAlignment="gravity"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-                            </androidx.cardview.widget.CardView>
+                            <EditText
+                                android:id="@+id/profile_data_input_state"
+                                style="@style/StyleInputData"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/category_input_state"
+                                tools:ignore="TouchTargetSizeCheck" />
                         </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_email"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <TextView
+                        style="@style/StyleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/category_input_email" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="false">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
+                            android:id="@+id/profile_data_card_email"
+                            android:layout_width="298dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/grayMozzafiato"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_email"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_email"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="290dp"
-                                    android:layout_height="wrap_content"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:text="@string/category_input_email"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-                            </androidx.cardview.widget.CardView>
+                            <EditText
+                                android:id="@+id/profile_data_input_email"
+                                style="@style/StyleInputData"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/category_input_email"
+                                tools:ignore="TouchTargetSizeCheck" />
                         </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/forumregular"
-                            android:text="@string/category_input_password"
-                            android:textColor="@color/white"
-                            android:textAlignment="textStart"
-                            android:textSize="16sp"/>
+                    <TextView
+                        style="@style/StyleLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/category_input_password" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="5dp"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="false">
 
                         <androidx.cardview.widget.CardView
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="5dp"
+                            android:id="@+id/profile_data_card_password"
+                            android:layout_width="298dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            app:cardBackgroundColor="@color/grayMozzafiato"
                             app:cardCornerRadius="25dp"
                             app:cardElevation="10dp"
                             app:cardPreventCornerOverlap="false">
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/profile_data_card_password"
-                                android:layout_width="298dp"
-                                android:layout_height="40dp"
-                                app:cardBackgroundColor="@color/grayMozzafiato"
-                                app:cardCornerRadius="25dp"
-                                app:cardElevation="10dp"
-                                android:layout_gravity="center"
-                                app:cardPreventCornerOverlap="false">
 
-                                <EditText
-                                    android:id="@+id/profile_data_input_password"
-                                    style="@style/StyleInputData"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:ems="10"
-                                    android:enabled="false"
-                                    android:inputType="textPassword"
-                                    android:text="@string/category_input_password"
-                                    android:textSize="18sp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-                            </androidx.cardview.widget.CardView>
+                            <EditText
+                                android:id="@+id/profile_data_input_password"
+                                style="@style/StyleInputData"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:inputType="textPassword"
+                                android:text="@string/category_input_password"
+                                tools:ignore="TouchTargetSizeCheck" />
                         </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
-                        <Button
-                            android:id="@+id/profile_data_button_edit"
-                            android:layout_width="300dp"
-                            android:layout_height="42dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="start"
-                            android:visibility="gone"
-                            android:text="Edit"
-                            android:background="@drawable/rounded_border" />
-
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/profile_data_button_edit"
+                        android:layout_width="300dp"
+                        android:layout_height="42dp"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/rounded_border"
+                        android:text="Edit"
+                        android:visibility="gone" />
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/nav_host_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                app:defaultNavHost="true"
-                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:navGraph="@navigation/nav_main"
-                />
+        </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
-
-    </RelativeLayout>
-
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,116 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background_gradient"
-    android:id="@+id/backgroud_login">
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/transparent_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="60dp">
 
         <TextView
             android:id="@+id/login_app_name"
+            style="@style/amozzafiatoText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:fontFamily="@font/forumregular"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:textAlignment="textStart"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/login_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:textAlignment="center"
             android:fontFamily="@font/forumregular"
             android:text="@string/title_login"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="50sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_email_layout"
             style="@style/StyleInput"
-            tools:ignore="MissingConstraints"
-
             android:layout_width="320dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_email_edit"
                 style="@style/StyleTextField"
-                android:hint="@string/category_input_email"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:hint="@string/category_input_email" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_password_layout"
             style="@style/StyleInput"
-            tools:ignore="MissingConstraints"
-
             android:layout_width="320dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password_edit"
                 style="@style/StyleTextField"
-
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
+                android:layout_height="wrap_content"
                 android:hint="@string/category_input_password"
-                android:inputType="text|textPassword"/>
+                android:inputType="text|textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/login_link_forgot_password"
             style="@style/StyleLink"
-            tools:ignore="TextContrastCheck"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:text="@string/link_forgot_password"
-            android:textAlignment="center">
-
-        </TextView>
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/login_button_login"
             style="@style/StyleButton"
-
             android:layout_width="320dp"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_gravity="center"
-
-            android:text="@string/title_login"
-            android:background="@drawable/rounded_border" />
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_border"
+            android:text="@string/title_login" />
 
         <TextView
             android:id="@+id/login_link_register"
             style="@style/StyleLink"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-
             android:text="@string/link_register"
-            android:textAlignment="center"
-            tools:ignore="TextContrastCheck">
+            android:textAlignment="center">
 
         </TextView>
 
-</LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

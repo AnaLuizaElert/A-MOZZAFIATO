@@ -7,6 +7,9 @@
     <string name="not">não</string>
 
     <string name="home_collection">ACESSE NOSSA COLEÇÃO</string>
+    <string name="home_news">NOVIDADES</string>
+    <string name="home_about_us">SOBRE NÓS</string>
+    <string name="home_about_us_description">Nós da A MOZZAFIATO oferecemos carros com história, carros clássicos que carregam lembranças. Prezamos pela transparência na venda de carros antigos, tendo como primordial objetivo a cumplicidade com seus clientes.</string>
 
     <string name="title_register">CADASTRO</string>
     <string name="category_input_image">Sua foto</string>
@@ -21,6 +24,8 @@
     <string name="title_login">LOGIN</string>
     <string name="link_register">Cadastre-se</string>
     <string name="link_forgot_password">Esqueceu a senha?</string>
+
+    <string name="internet_error">Conecte-se a internet!</string>
 
 
     <string name="forgot_password_title">Recuperar conta</string>
@@ -68,8 +73,8 @@
     <string name="page_car_price">preço</string>
     <string name="page_car_interest">TENHO INTERESSE</string>
     <string name="page_car_data">DADOS</string>
-    <string name="page_car_year">ANO:</string>
-    <string name="page_car_km">KM:</string>
+    <string name="page_car_year">Ano:</string>
+    <string name="page_car_km">Km:</string>
     <string name="page_car_exchange">Câmbio:</string>
     <string name="page_car_category">Categoria:</string>
     <string name="page_car_engine">Motor:</string>
