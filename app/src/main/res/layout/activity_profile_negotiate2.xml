@@ -80,7 +80,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profile_negotiate2_card_price"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="5dp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
@@ -113,7 +113,7 @@
                     <RadioGroup
                         android:id="@+id/profile_negotiate2_container_radio_exchange"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -150,7 +150,7 @@
                     <RadioGroup
                         android:id="@+id/profile_negotiate2_container_radio_original"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -211,7 +211,7 @@
                     <Button
                         android:id="@+id/profile_negotiate2_button_send"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_gravity="start"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/rounded_border"

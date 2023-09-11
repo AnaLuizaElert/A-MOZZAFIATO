@@ -1,6 +1,7 @@
 package com.amozzafiato.pages.profile;
 
 import android.annotation.SuppressLint;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -123,30 +124,45 @@ public class ProfileData extends AppCompatActivity {
         inputName.setTextColor(getResources().getColor(android.R.color.white));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardName.setCardBackgroundColor(getColor(R.color.grayMozzafiato));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayMozzafiato));
+            // Aplique a cor ao backgroundTint
+            inputName.setBackgroundTintList(colorStateList);
         }
 
         inputEmail.setEnabled(false);
         inputEmail.setTextColor(getResources().getColor(android.R.color.white));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardEmail.setCardBackgroundColor(getColor(R.color.grayMozzafiato));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayMozzafiato));
+            // Aplique a cor ao backgroundTint
+            inputEmail.setBackgroundTintList(colorStateList);
         }
 
         inputPassword.setEnabled(false);
         inputPassword.setTextColor(getResources().getColor(android.R.color.white));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardPassword.setCardBackgroundColor(getColor(R.color.grayMozzafiato));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayMozzafiato));
+            // Aplique a cor ao backgroundTint
+            inputPassword.setBackgroundTintList(colorStateList);
         }
 
         inputCountry.setEnabled(false);
         inputCountry.setTextColor(getResources().getColor(android.R.color.white));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardCountry.setCardBackgroundColor(getColor(R.color.grayMozzafiato));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayMozzafiato));
+            // Aplique a cor ao backgroundTint
+            inputCountry.setBackgroundTintList(colorStateList);
         }
 
         inputState.setEnabled(false);
         inputState.setTextColor(getResources().getColor(android.R.color.white));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardState.setCardBackgroundColor(getColor(R.color.grayMozzafiato));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayMozzafiato));
+            // Aplique a cor ao backgroundTint
+            inputState.setBackgroundTintList(colorStateList);
         }
 
         editButton.setVisibility(View.GONE);
@@ -157,30 +173,45 @@ public class ProfileData extends AppCompatActivity {
         inputName.setTextColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardName.setCardBackgroundColor(getColor(R.color.grayInput));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayInput));
+            // Aplique a cor ao backgroundTint
+            inputName.setBackgroundTintList(colorStateList);
         }
 
         inputEmail.setEnabled(true);
         inputEmail.setTextColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardEmail.setCardBackgroundColor(getColor(R.color.grayInput));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayInput));
+            // Aplique a cor ao backgroundTint
+            inputEmail.setBackgroundTintList(colorStateList);
         }
 
         inputPassword.setEnabled(true);
         inputPassword.setTextColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardPassword.setCardBackgroundColor(getColor(R.color.grayInput));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayInput));
+            // Aplique a cor ao backgroundTint
+            inputPassword.setBackgroundTintList(colorStateList);
         }
 
         inputCountry.setEnabled(true);
         inputCountry.setTextColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardCountry.setCardBackgroundColor(getColor(R.color.grayInput));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayInput));
+            // Aplique a cor ao backgroundTint
+            inputCountry.setBackgroundTintList(colorStateList);
         }
 
         inputState.setEnabled(true);
         inputState.setTextColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             cardState.setCardBackgroundColor(getColor(R.color.grayInput));
+            ColorStateList colorStateList = ColorStateList.valueOf(getColor(R.color.grayInput));
+            // Aplique a cor ao backgroundTint
+            inputState.setBackgroundTintList(colorStateList);
         }
 
         editButton.setVisibility(View.VISIBLE);

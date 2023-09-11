@@ -42,6 +42,7 @@
                 style="@style/StyleTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="false"
                 android:hint="@string/category_input_name" />
         </com.google.android.material.textfield.TextInputLayout>
 

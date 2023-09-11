@@ -87,7 +87,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profile_negotiate_card_name_car"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="5dp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
@@ -119,7 +119,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profile_negotiate_card_model"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="5dp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
@@ -174,7 +174,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/profile_negotiate_card_year"
                             android:layout_width="100dp"
-                            android:layout_height="42dp"
+                            android:layout_height="48dp"
                             android:layout_marginTop="5dp"
                             app:cardBackgroundColor="@color/white"
                             app:cardCornerRadius="25dp"
@@ -197,7 +197,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/profile_negotiate_card_km"
                             android:layout_width="150dp"
-                            android:layout_height="42dp"
+                            android:layout_height="48dp"
                             android:layout_marginStart="50dp"
                             android:layout_marginTop="5dp"
                             app:cardBackgroundColor="@color/white"
@@ -233,7 +233,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profile_negotiate_card_fuel"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="5dp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
@@ -265,7 +265,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profile_negotiate_card_color"
                         android:layout_width="300dp"
-                        android:layout_height="42dp"
+                        android:layout_height="48dp"
                         android:layout_marginTop="5dp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="25dp"
